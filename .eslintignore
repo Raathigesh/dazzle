@@ -1,0 +1,5 @@
+bin/**
+dist/**
+build/**
+tmp/**
+coverage/**
