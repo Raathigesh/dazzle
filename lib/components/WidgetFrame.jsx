@@ -3,6 +3,9 @@ import { removeWidget } from '../util';
 import DefaultFrame from './DefaultFrame';
 import '../style/style.css';
 
+/**
+ * Frame component which surrounds each widget.
+ */
 const WidgetFrame = ({onRemove, children, layout, columnIndex, rowIndex, widgetIndex, editable , frame}) => {
 	var remove = function() {
 		let newLayout = removeWidget(layout, rowIndex, columnIndex,  widgetIndex);
@@ -44,7 +47,7 @@ WidgetFrame.PropTypes = {
 	rowIndex: PropTypes.number,
 
 	/**
-	 * Index of the widget.	 
+	 * Index of the widget.
 	 */
 	widgetIndex: PropTypes.number,
 
