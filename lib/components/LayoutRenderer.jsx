@@ -9,7 +9,7 @@ import Widgets from './Widgets';
 function getColumns(columns, widgets, onRemove, layout, rowIndex, editable, onAdd, frame) {
 	return columns.map((column, index) => {
 		return (
-			<Column className={column.className} onAdd={onAdd} layout={layout} rowIndex={rowIndex} columnIndex={index}>
+			<Column className={column.className} onAdd={onAdd} layout={layout} rowIndex={rowIndex} columnIndex={index} editable={editable}>
 				<Widgets
 					widgets={column.widgets}
 					widgetTypes={widgets}

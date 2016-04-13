@@ -2,13 +2,19 @@ import React, { PropTypes } from 'react';
 
 const FlatFrame = ({children, onRemove, editable}) => {
 	return (
-		<div className="defaultWidgetFrame">
-			<div className="defaultWidgetFrameHeader">
-				<h2>Flat Frame</h2>
-				{editable && <button onClick={() => {onRemove()}}>Remove</button>}
-			</div>
-			{children}
-		</div>
+		<div className="x_panel fixed_height_320">
+      <div className="x_title">
+          <h2>Application Devices <small>Sessions</small></h2>
+          <ul className="nav navbar-right panel_toolbox">
+              {editable && <li><a onClick={() => {onRemove()}} className="close-link"><i className="fa fa-close"></i></a>
+              </li>}
+          </ul>
+          <div className="clearfix"></div>
+      </div>
+      <div className="x_content">
+				{children}
+      </div>
+  </div>
 	)
 }
 

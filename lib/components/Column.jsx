@@ -1,14 +1,14 @@
 import React, { PropTypes } from 'react';
 
 /**
- * Colum of the dashboard grid. A column holds multiple widgets. 
+ * Colum of the dashboard grid. A column holds multiple widgets.
  */
-const Column = ({ className, children, onAdd, rowIndex, columnIndex, layout }) => {
+const Column = ({ className, children, onAdd, rowIndex, columnIndex, layout, editable }) => {
 	return (
 		<div className={ className }>
-			<div>
+			{editable && <div>
 				<button onClick={() => {onAdd(layout, rowIndex, columnIndex)}}>Add</button>
-			</div>
+			</div>}
 			{ children }
 		</div>
 	);
@@ -44,7 +44,12 @@ Column.propTypes = {
 	/**
 	 * Index of this column.
 	 */
-	columnIndex: PropTypes.number
+	columnIndex: PropTypes.number,
+
+	/**
+	 * Indicates weather dashboard is in editable state
+	 */
+	editable: PropTypes.bool
 };
 
 export default Column;

@@ -1,11 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Dashboard from '../../lib/components/Dashboard.jsx';
+import Dashboard, { addWidget } from '../../lib';
+
 import cloneDeep from 'lodash.clonedeep';
-import 'flexboxgrid';
 
 import HelloWorld from './widgets/HelloWorld';
 import FlatFrame from './FlatFrame';
+
+import '../css/bootstrap.min.css';
+import '../css/custom.css';
+import '../fonts/css/font-awesome.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,11 +17,14 @@ class App extends React.Component {
       layout: {
     		rows: [{
     			columns: [{
-    				className: 'col-xs-6 col-sm-6 col-md-6 col-lg-6',
+    				className: 'col-md-4 col-sm-6 col-xs-12',
     				widgets: [{name: 'HelloWorld', key:'first'}]
     			}, {
-    				className: 'col-xs-6 col-sm-6 col-md-6 col-lg-6',
+    				className: 'col-md-4 col-sm-6 col-xs-12',
     				widgets: [{name: 'HelloWorld', key: 'second'}]
+    			}, {
+    				className: 'col-md-4 col-sm-6 col-xs-12',
+    				widgets: []
     			}]
     		}]
     	},
@@ -45,23 +51,20 @@ class App extends React.Component {
   }
 
   onAdd = (layout, rowIndex, columnIndex) => {
-    	layout.rows[rowIndex].columns[columnIndex].widgets.push({
-        name: 'HelloWorld',
-        key: 'third'
-      });
-
-      this.setState({
-        editMode: !this.state.editMode
-      });
+    this.setState({
+      layout: addWidget(layout, rowIndex, columnIndex, 'HelloWorld')
+    });
   }
 
   render () {
     return (
-      <div>
+    <div className="container body">
+      <div className="main_container">
         <button onClick={this.toggleEdit}>Edit</button>
         <Dashboard onRemove={this.onRemove} layout={this.state.layout} widgets={this.state.widgets} editable={this.state.editMode} onAdd={this.onAdd} frame={FlatFrame}>
         </Dashboard>
       </div>
+    </div>
     );
   }
 }
