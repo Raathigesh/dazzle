@@ -7,6 +7,10 @@
 </h1>
 
 <p align="center">
+  <a href="https://github.com/Raathigesh/Dazzle/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/express.svg?maxAge=2592000"
+         alt="License">
+  </a>
   <a href="https://travis-ci.org/Raathigesh/Dazzle">
     <img src="https://travis-ci.org/Raathigesh/Dazzle.svg?branch=master"
          alt="Travis Build">
