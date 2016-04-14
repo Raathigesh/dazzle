@@ -17,8 +17,8 @@
     "lint-js": "eslint .",
     "test": "npm run lint && npm run cover",
     "test:watch": "babel-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
-    "cover": "babel-node ./node_modules/istanbul/lib/cli cover --report html ./node_modules/mocha/bin/_mocha --  ./test/**/*.spec.js",
-    "cover2": "cross-env NODE_ENV=test babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --bail --recursive ./test/**/*.spec.js"
+    "cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js",
+    "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js && ./node_modules/.bin/codecov",
   },
   "keywords": [
     "react",
@@ -96,5 +96,8 @@
     "http-proxy": "^1.12.1",
     "lodash.clonedeep": "^4.3.2",
     "winston": "^2.1.1"
+  },
+  "nyc": {
+    "include": ["./lib/**/*.jsx"]
   }
 }

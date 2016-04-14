@@ -10,7 +10,7 @@ describe('<Column />', () => {
 		let layout = {};
 		let rowIndex = 1;
 		let columnIndex = 2;
-		const component = shallow(<Column layout={layout} rowIndex={rowIndex} columnIndex={columnIndex} onAdd={onAdd} />);
+		const component = shallow(<Column layout={layout} rowIndex={rowIndex} columnIndex={columnIndex} onAdd={onAdd} editable/>);
 		component.find('button').simulate('click');
 		expect(onAdd.calledWithExactly(layout, rowIndex, columnIndex)).to.equal(true);
 	});

@@ -1,0 +1,8 @@
+instrumentation:
+  root: ./lib
+  extensions: ['.js', '.jsx']
+reporting:
+    print: summary
+    reports:
+        - lcov
+    dir: ./coverage
