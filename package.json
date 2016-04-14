@@ -97,6 +97,6 @@
     "winston": "^2.1.1"
   },
   "czConfig": {
-    "path": "node_modules/cz-conventional-changelo"
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
