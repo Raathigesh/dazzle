@@ -12,7 +12,7 @@
          alt="License">
   </a>
   <a href="https://travis-ci.org/Raathigesh/Dazzle">
-    <img src="https://travis-ci.org/Raathigesh/Dazzle.svg?branch=master&style=flat-square"
+    <img src="https://img.shields.io/travis/Raathigesh/Dazzle.svg?style=flat-square"
          alt="Travis Build">
   </a>
   <a href="https://codecov.io/github/Raathigesh/Dazzle?branch=master">
