@@ -1,6 +1,6 @@
 {
   "name": "Dazzle",
-  "version": "0.1.0",
+  "version": "0.0.0-semantically-released",
   "description": "The simple yet flexible dashbording solution for React",
   "license": "MIT",
   "engines": {
@@ -15,10 +15,12 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "lint": "npm run lint-js",
     "lint-js": "eslint .",
-    "test": "npm run lint && npm run cover",
+    "test": "npm run lint",
     "test:watch": "babel-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
     "cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js",
-    "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js && codecov"
+    "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js && codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
   },
   "keywords": [
     "react",
@@ -48,8 +50,10 @@
     "babel-preset-stage-0": "^6.3.13",
     "bootstrap-webpack": "0.0.5",
     "chai": "^3.4.0",
+    "commitizen": "^2.7.6",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.0",
+    "cz-conventional-changelog": "^1.1.5",
     "enzyme": "^2.2.0",
     "es5-shim": "^4.5.6",
     "es6-promise": "^3.1.2",
@@ -59,7 +63,6 @@
     "eslint-loader": "^1.1.1",
     "eslint-plugin-react": "^4.2.0",
     "file-loader": "^0.8.4",
-    "history": "^2.0.1",
     "html-webpack-plugin": "^2.9.0",
     "istanbul": "^1.0.0-alpha.2",
     "jsdom": "^8.1.0",
@@ -72,13 +75,9 @@
     "react-redux": "^4.0.6",
     "react-router": "^2.0.0-rc5",
     "react-router-redux": "^4.0.0",
-    "redux": "^3.3.1",
-    "redux-form": "^4.1.6",
-    "redux-localstorage": "^0.4.0",
-    "redux-logger": "^2.1.4",
-    "redux-thunk": "^2.0.1",
     "require-hacker": "^2.1.2",
     "rimraf": "^2.4.3",
+    "semantic-release": "^4.3.5",
     "sinon": "^1.17.3",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.0",
@@ -97,7 +96,7 @@
     "lodash.clonedeep": "^4.3.2",
     "winston": "^2.1.1"
   },
-  "nyc": {
-    "include": ["./lib/**/*.jsx"]
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelo"
   }
 }
