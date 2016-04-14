@@ -16,7 +16,7 @@
          alt="Travis Build">
   </a>
   <a href="https://codecov.io/github/Raathigesh/Dazzle?branch=master">
-    <img src="https://codecov.io/github/Raathigesh/Dazzle/coverage.svg?branch=master&style=flat-square" alt="Coverage via Codecov" />
+    <img src="https://img.shields.io/codecov/c/github/Raathigesh/Dazzle.svg?style=flat-square" alt="Coverage via Codecov" />
   </a>
 </p>
 <br>
