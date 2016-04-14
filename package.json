@@ -18,7 +18,7 @@
     "test": "npm run lint && npm run cover",
     "test:watch": "babel-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
     "cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js",
-    "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js && ./node_modules/.bin/codecov"
+    "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js && codecov"
   },
   "keywords": [
     "react",
