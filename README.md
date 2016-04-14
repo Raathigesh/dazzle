@@ -15,6 +15,9 @@
     <img src="https://travis-ci.org/Raathigesh/Dazzle.svg?branch=master"
          alt="Travis Build">
   </a>
+  <a href="https://codecov.io/github/Raathigesh/Dazzle?branch=master">
+    <img src="https://codecov.io/github/Raathigesh/Dazzle/coverage.svg?branch=master" alt="Coverage via Codecov" />
+  </a>
 </p>
 <br>
 
