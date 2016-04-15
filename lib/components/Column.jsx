@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import AddWidget from './AddWidget';
 
 /**
  * Colum of the dashboard grid. A column holds multiple widgets.
@@ -6,9 +7,7 @@ import React, { PropTypes } from 'react';
 const Column = ({ className, children, onAdd, rowIndex, columnIndex, layout, editable }) => {
 	return (
 		<div className={ className }>
-			{editable && <div>
-				<button onClick={() => {onAdd(layout, rowIndex, columnIndex)}}>Add</button>
-			</div>}
+			{editable && <AddWidget onClick={() => {onAdd(layout, rowIndex, columnIndex)}}/>}
 			{ children }
 		</div>
 	);

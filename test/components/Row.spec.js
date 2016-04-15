@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { spy } from 'sinon';
 import React from 'react';
 import { shallow } from 'enzyme';
-import Row from '../../../lib/components/Row.jsx';
+import Row from '../../lib/components/Row.jsx';
 
 describe('<Row />', () => {
 	it('Should render the children', () => {

@@ -1,11 +1,13 @@
 {
-  "name": "Dazzle",
+  "name": "react-dazzle",
   "version": "0.0.0-semantically-released",
   "description": "The simple yet flexible dashbording solution for React",
   "license": "MIT",
   "engines": {
     "node": "4.x"
   },
+  "main": "lib/index.js",
+  "style": "lib/style/style.css",
   "scripts": {
     "postinstall": "npm run build",
     "prebuild": "npm run clean",
@@ -15,7 +17,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
     "lint": "npm run lint-js",
     "lint-js": "eslint .",
-    "test": "npm run lint",
+    "test": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- --require ./test/entry.js ./test/**/*.spec.js",
     "test:watch": "babel-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
     "cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js",
     "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- ./test/**/*.spec.js && codecov",

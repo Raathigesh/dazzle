@@ -31,3 +31,11 @@
   overflow: hidden;
   white-space: nowrap;
 }
+
+.add-widget-button {
+	padding: 10px;
+	text-align: center;
+	border: 1px dotted #DCDCDC;
+	margin-bottom: 10px;
+	cursor: pointer;
+}

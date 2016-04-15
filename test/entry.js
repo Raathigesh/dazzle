@@ -1,15 +1,4 @@
-import requireHacker from 'require-hacker';
+import { jsdom } from 'jsdom';
 
-[ 'png',
-  'jpg',
-  'jpeg',
-  'gif',
-  'woff',
-  'woff2',
-  'ttf',
-  'eot',
-  'css',
-  'svg',
-].forEach((type) => {
-  requireHacker.hook(type, () => 'module.exports = ""');
-});
+global.document = jsdom('<!doctype html><html><body></body></html>');
+global.window = document.defaultView;

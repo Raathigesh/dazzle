@@ -1,8 +1,6 @@
 import React from 'react';
 import Dashboard, { addWidget } from '../../lib';
-
-import cloneDeep from 'lodash.clonedeep';
-
+import Header from './Header';
 import HelloWorld from './widgets/HelloWorld';
 import FlatFrame from './FlatFrame';
 
@@ -30,8 +28,8 @@ class App extends React.Component {
     	},
       widgets: {
         "HelloWorld": {
-          name: 'HelloWorld',
-          type: HelloWorld
+          type: HelloWorld,
+          title: 'Sample Hello World App'
         }
       },
       editMode: false
@@ -40,8 +38,8 @@ class App extends React.Component {
 
   onRemove = (layout) => {
     this.setState({
-      layout: cloneDeep(layout)
-    })
+      layout: layout
+    });
   }
 
   toggleEdit = () => {
@@ -60,9 +58,23 @@ class App extends React.Component {
     return (
     <div className="container body">
       <div className="main_container">
-        <button onClick={this.toggleEdit}>Edit</button>
-        <Dashboard onRemove={this.onRemove} layout={this.state.layout} widgets={this.state.widgets} editable={this.state.editMode} onAdd={this.onAdd} frame={FlatFrame}>
-        </Dashboard>
+        <Header />
+        <div className="row">
+          <div className="col-sm-12 text-right">
+            <button type="button" className="btn btn-default btn-xs" onClick={this.toggleEdit}>
+              <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                Edit
+              </button>
+          </div>
+        </div>
+        <Dashboard
+          onRemove={this.onRemove}
+          layout={this.state.layout}
+          widgets={this.state.widgets}
+          editable={this.state.editMode}
+          onAdd={this.onAdd}
+          frame={FlatFrame}
+          />
       </div>
     </div>
     );

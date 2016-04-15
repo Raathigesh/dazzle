@@ -1,22 +1,22 @@
 import React, { PropTypes, createElement } from 'react';
 import { removeWidget } from '../util';
 import DefaultFrame from './DefaultFrame';
-import '../style/style.css';
+import cloneDeep from 'lodash.clonedeep';
 
 /**
  * Frame component which surrounds each widget.
  */
-const WidgetFrame = ({onRemove, children, layout, columnIndex, rowIndex, widgetIndex, editable , frame}) => {
+const WidgetFrame = ({onRemove, children, layout, columnIndex, rowIndex, widgetIndex, editable , frame, title}) => {
 	var remove = function() {
 		let newLayout = removeWidget(layout, rowIndex, columnIndex,  widgetIndex);
-		onRemove(newLayout);
+		onRemove(cloneDeep(newLayout));
 	};
 
 	let selected = null;
 	if (frame) {
-		selected = createElement(frame, {	children,	editable, onRemove: remove });
+		selected = createElement(frame, {	children,	editable, title, onRemove: remove });
 	} else {
-		selected = <DefaultFrame children={children} editable={editable} onRemove={remove}/>
+		selected = <DefaultFrame children={children} editable={editable} onRemove={remove} title={title}/>
 	}
 	return selected;
 };

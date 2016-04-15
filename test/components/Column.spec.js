@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import React from 'react';
-import { shallow } from 'enzyme';
-import Column from '../../../lib/components/Column.jsx';
+import { shallow, mount } from 'enzyme';
+import Column from '../../lib/components/Column.jsx';
 
 describe('<Column />', () => {
 	it('Should call onAdd when add is clicked', () => {
@@ -10,8 +10,8 @@ describe('<Column />', () => {
 		let layout = {};
 		let rowIndex = 1;
 		let columnIndex = 2;
-		const component = shallow(<Column layout={layout} rowIndex={rowIndex} columnIndex={columnIndex} onAdd={onAdd} editable/>);
-		component.find('button').simulate('click');
+		const component = mount(<Column layout={layout} rowIndex={rowIndex} columnIndex={columnIndex} onAdd={onAdd} editable/>);
+		component.find('.add-widget-button').simulate('click');
 		expect(onAdd.calledWithExactly(layout, rowIndex, columnIndex)).to.equal(true);
 	});
 

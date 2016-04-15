@@ -4,10 +4,18 @@ import WidgetFrame from './WidgetFrame';
 const Widgets = ({widgets, widgetTypes, onRemove, layout, columnIndex, rowIndex, editable, frame}) => {
 	let createdWidgets = widgets.map((widget, index)=> {
 			return (
-				<WidgetFrame onRemove={onRemove} layout={layout} columnIndex={columnIndex} rowIndex={rowIndex} widgetIndex={index} editable={editable} frame={frame}>
+				<WidgetFrame
+					title={widgetTypes[widget.name].title}
+					onRemove={onRemove}
+					layout={layout}
+					columnIndex={columnIndex}
+					rowIndex={rowIndex}
+					widgetIndex={index}
+					editable={editable}
+					frame={frame}>
 					{
 						createElement(widgetTypes[widget.name].type, {
-							multireducerKey: widget.key
+
 						})
 					}
 				</WidgetFrame>

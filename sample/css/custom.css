@@ -298,7 +298,7 @@ body.nav-md .container.body .right_col {
 }
 body {
   color: #73879C;
-  background: #2A3F54;
+  background: white;
   /*#ECF0F1; #FCFCFC*/
   font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
   font-size: 13px;
@@ -307,9 +307,12 @@ body {
 }
 .main_container .top_nav {
   display: block;
-  margin-left: 230px;
 }
-.main_container {}
+.main_container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .no-padding {
   padding: 0 !important;
 }
