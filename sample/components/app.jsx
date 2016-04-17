@@ -1,12 +1,13 @@
 import React from 'react';
 import Dashboard, { addWidget } from '../../lib';
 import Header from './Header';
+import EditBar from './EditBar';
+import Container from './Container';
 import HelloWorld from './widgets/HelloWorld';
-import FlatFrame from './FlatFrame';
 
-import '../css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import '../css/custom.css';
-import '../fonts/css/font-awesome.css';
+import '../../lib/style/style.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -50,27 +51,17 @@ class App extends React.Component {
 
   render() {
     return (
-    <div className="container body">
-      <div className="main_container">
-        <Header />
-        <div className="row">
-          <div className="col-sm-12 text-right">
-            <button type="button" className="btn btn-default btn-xs" onClick={this.toggleEdit}>
-              <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                Edit
-              </button>
-          </div>
-        </div>
-        <Dashboard
-          onRemove={this.onRemove}
-          layout={this.state.layout}
-          widgets={this.state.widgets}
-          editable={this.state.editMode}
-          onAdd={this.onAdd}
-          frame={FlatFrame}
-          />
-      </div>
-    </div>
+    <Container>
+      <Header />
+      <EditBar onEdit={this.toggleEdit} />
+      <Dashboard
+        onRemove={this.onRemove}
+        layout={this.state.layout}
+        widgets={this.state.widgets}
+        editable={this.state.editMode}
+        onAdd={this.onAdd}
+        />
+    </Container>
     );
   }
 
