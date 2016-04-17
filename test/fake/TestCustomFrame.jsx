@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react'
+import React from 'react';
 
 class TestCustomFrame extends React.Component {
-	render () {
-		return <div />
-	}
+  render() {
+    return <div />;
+  }
 }
 
 export default TestCustomFrame;

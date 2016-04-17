@@ -6,30 +6,29 @@
 	display: inline-block;
 	background: #fff;
 	border: 1px solid #E6E9ED;
-	-webkit-column-break-inside: avoid;
-	-moz-column-break-inside: avoid;
-	column-break-inside: avoid;
-	opacity: 1;
-	-moz-transition: all .2s ease;
-	-o-transition: all .2s ease;
-	-webkit-transition: all .2s ease;
-	-ms-transition: all .2s ease;
-	transition: all .2s ease;
 }
 
 .defaultWidgetFrameHeader {
 	border-bottom: 2px solid #E6E9ED;
 	padding: 1px 5px 6px;
 	margin-bottom: 10px;
+	height: 35px;
 }
 
-.defaultWidgetFrameHeader h2 {
-	margin: 5px 0 6px;
+.defaultWidgetFrameHeader .title {
+	font-size: 18px;
   float: left;
   display: block;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.defaultWidgetFrameHeader .remove {
+	margin-left: 140px;
+	font-size: 11px;
+	cursor: pointer;
+	text-decoration: none;
 }
 
 .add-widget-button {
@@ -38,4 +37,9 @@
 	border: 1px dotted #DCDCDC;
 	margin-bottom: 10px;
 	cursor: pointer;
+	text-decoration: none;
+}
+
+.add-widget-link {
+	text-decoration: none;
 }

@@ -1,15 +1,15 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
-const Header = (props) => {
-	return (
-		<div className="top_nav">
-				<div className="nav_menu">
-						<nav className="" role="navigation">
-								React Dazzle
-						</nav>
-				</div>
-		</div>
-	)
-}
+const Header = () => {
+  return (
+    <div className="top_nav">
+        <div className="nav_menu">
+            <nav className="" role="navigation">
+                React Dazzle
+            </nav>
+        </div>
+    </div>
+  );
+};
 
 export default Header;

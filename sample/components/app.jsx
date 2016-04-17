@@ -13,48 +13,42 @@ class App extends React.Component {
     super(props);
     this.state = {
       layout: {
-    		rows: [{
-    			columns: [{
-    				className: 'col-md-4 col-sm-6 col-xs-12',
-    				widgets: [{name: 'HelloWorld', key:'first'}]
-    			}, {
-    				className: 'col-md-4 col-sm-6 col-xs-12',
-    				widgets: [{name: 'HelloWorld', key: 'second'}]
-    			}, {
-    				className: 'col-md-4 col-sm-6 col-xs-12',
-    				widgets: []
-    			}]
-    		}]
-    	},
-      widgets: {
-        "HelloWorld": {
-          type: HelloWorld,
-          title: 'Sample Hello World App'
-        }
+        rows: [{
+          columns: [{
+            className: 'col-md-4 col-sm-6 col-xs-12',
+            widgets: [{name: 'HelloWorld'}],
+          }, {
+            className: 'col-md-4 col-sm-6 col-xs-12',
+            widgets: [{name: 'HelloWorld'}],
+          }, {
+            className: 'col-md-4 col-sm-6 col-xs-12',
+            widgets: [],
+          }],
+        }],
       },
-      editMode: false
+      widgets: {
+        HelloWorld: {
+          type: HelloWorld,
+          title: 'Sample Hello World App',
+        },
+      },
+      editMode: false,
     };
   }
 
   onRemove = (layout) => {
     this.setState({
-      layout: layout
-    });
-  }
-
-  toggleEdit = () => {
-    this.setState({
-      editMode: !this.state.editMode
+      layout: layout,
     });
   }
 
   onAdd = (layout, rowIndex, columnIndex) => {
     this.setState({
-      layout: addWidget(layout, rowIndex, columnIndex, 'HelloWorld')
+      layout: addWidget(layout, rowIndex, columnIndex, 'HelloWorld'),
     });
   }
 
-  render () {
+  render() {
     return (
     <div className="container body">
       <div className="main_container">
@@ -79,6 +73,12 @@ class App extends React.Component {
     </div>
     );
   }
+
+  toggleEdit = () => {
+    this.setState({
+      editMode: !this.state.editMode,
+    });
+  };
 }
 
 export default App;
