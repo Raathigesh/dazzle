@@ -18,7 +18,7 @@
     "lint": "npm run lint-js",
     "lint-js": "eslint .",
     "test": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- --require ./test/entry.js ./test/**/*.spec.js",
-    "test:watch": "babel-node ./node_modules/mocha/bin/_mocha --opts ./test/mocha.opts --watch",
+    "test:watch": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- --require ./test/entry.js ./test/**/*.spec.js --watch",
     "cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha --  --require ./test/entry.js ./test/**/*.spec.js",
     "report-cover": "babel-node ./node_modules/istanbul/lib/cli.js --include-all-sources cover node_modules/mocha/bin/_mocha -- --require ./test/entry.js ./test/**/*.spec.js && codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
