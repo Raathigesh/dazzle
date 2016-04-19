@@ -4,6 +4,8 @@ import Header from './Header';
 import EditBar from './EditBar';
 import Container from './Container';
 import HelloWorld from './widgets/HelloWorld';
+import AnotherWidget from './widgets/AnotherWidget';
+import AddWidgetDialog from './AddWidgetDialog';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/custom.css';
@@ -16,24 +18,41 @@ class App extends React.Component {
       layout: {
         rows: [{
           columns: [{
-            className: 'col-md-4 col-sm-6 col-xs-12',
+            className: 'col-md-4 col-sm-6 col-xs-6',
             widgets: [{name: 'HelloWorld'}],
           }, {
-            className: 'col-md-4 col-sm-6 col-xs-12',
+            className: 'col-md-4 col-sm-6 col-xs-6',
+            widgets: [{name: 'AnotherWidget'}],
+          }, {
+            className: 'col-md-4 col-sm-6 col-xs-6',
+            widgets: [{name: 'HelloWorld'}],
+          }],
+        }, {
+          columns: [{
+            className: 'col-md-4 col-sm-6 col-xs-6',
+            widgets: [{name: 'AnotherWidget'}],
+          }, {
+            className: 'col-md-4 col-sm-6 col-xs-6',
             widgets: [{name: 'HelloWorld'}],
           }, {
-            className: 'col-md-4 col-sm-6 col-xs-12',
-            widgets: [],
+            className: 'col-md-4 col-sm-6 col-xs-6',
+            widgets: [{name: 'AnotherWidget'}],
           }],
         }],
       },
       widgets: {
         HelloWorld: {
           type: HelloWorld,
-          title: 'Sample Hello World App',
+          title: 'Rocket Widget',
+        },
+        AnotherWidget: {
+          type: AnotherWidget,
+          title: 'Another Widget',
         },
       },
       editMode: false,
+      isModalOpen: false,
+      addWidgetOptions: null,
     };
   }
 
@@ -45,7 +64,18 @@ class App extends React.Component {
 
   onAdd = (layout, rowIndex, columnIndex) => {
     this.setState({
-      layout: addWidget(layout, rowIndex, columnIndex, 'HelloWorld'),
+      isModalOpen: true,
+      addWidgetOptions: {
+        layout,
+        rowIndex,
+        columnIndex,
+      },
+    });
+  }
+
+  onRequestClose = () => {
+    this.setState({
+      isModalOpen: false,
     });
   }
 
@@ -60,7 +90,9 @@ class App extends React.Component {
         widgets={this.state.widgets}
         editable={this.state.editMode}
         onAdd={this.onAdd}
+        rowClass="Damn"
         />
+      <AddWidgetDialog widgets={this.state.widgets} isModalOpen={this.state.isModalOpen} onRequestClose={this.onRequestClose} onWidgetSelect={this.widgetSelected}/>
     </Container>
     );
   }
@@ -70,6 +102,14 @@ class App extends React.Component {
       editMode: !this.state.editMode,
     });
   };
+
+  widgetSelected = (widgetName) => {
+    const {layout, rowIndex, columnIndex} = this.state.addWidgetOptions;
+    this.setState({
+      layout: addWidget(layout, rowIndex, columnIndex, widgetName),
+    });
+    this.onRequestClose();
+  }
 }
 
 export default App;
