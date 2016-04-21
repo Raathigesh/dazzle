@@ -43,7 +43,7 @@ class App extends React.Component {
       widgets: {
         HelloWorld: {
           type: HelloWorld,
-          title: 'Rocket Widget',
+          title: 'Rocket Widget 123',
         },
         AnotherWidget: {
           type: AnotherWidget,
@@ -73,6 +73,12 @@ class App extends React.Component {
     });
   }
 
+  onMove = (layout) => {
+    this.setState({
+      layout: layout,
+    });
+  }
+
   onRequestClose = () => {
     this.setState({
       isModalOpen: false,
@@ -90,7 +96,7 @@ class App extends React.Component {
         widgets={this.state.widgets}
         editable={this.state.editMode}
         onAdd={this.onAdd}
-        rowClass="Damn"
+        onMove={this.onMove}
         />
       <AddWidgetDialog widgets={this.state.widgets} isModalOpen={this.state.isModalOpen} onRequestClose={this.onRequestClose} onWidgetSelect={this.widgetSelected}/>
     </Container>

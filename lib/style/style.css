@@ -43,3 +43,12 @@
 .add-widget-link {
 	text-decoration: none;
 }
+
+.editable-column {
+	border: 1px dotted #8C8080;
+	padding: 10px;
+}
+
+.droppable-column {
+	background-color: #E7E7E7;
+}
