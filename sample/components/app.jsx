@@ -6,6 +6,7 @@ import Container from './Container';
 import HelloWorld from './widgets/HelloWorld';
 import AnotherWidget from './widgets/AnotherWidget';
 import AddWidgetDialog from './AddWidgetDialog';
+import CustomAddWidgetButton from './CustomAddWidgetButton';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/custom.css';
@@ -95,6 +96,8 @@ class App extends React.Component {
         layout={this.state.layout}
         widgets={this.state.widgets}
         editable={this.state.editMode}
+        addWidgetButtonText="Add"
+        addWidgetComponent={CustomAddWidgetButton}
         onAdd={this.onAdd}
         onMove={this.onMove}
         />
