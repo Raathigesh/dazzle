@@ -12,8 +12,19 @@ describe('<WidgetFrame />', () => {
     let layout = {};
     let rowIndex = 1;
     let columnIndex = 2;
-    const component = shallow(<WidgetFrame layout={layout} rowIndex={rowIndex} columnIndex={columnIndex} onAdd={onAdd} editable/>);
-    expect(component.type()).to.equal(DefaultFrame);
+    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    let identity =  (el) => { return el; };
+    const component = shallow(
+      <OriginalWidgetFrame
+        layout={layout}
+        rowIndex={rowIndex}
+        columnIndex={columnIndex}
+        onAdd={onAdd}
+        editable
+        connectDragSource={identity}
+      />
+    );
+    expect(component.find(DefaultFrame)).to.have.length(1);
   });
 
   it('DefaultFrame should be provided with necessary props', () => {
@@ -21,10 +32,20 @@ describe('<WidgetFrame />', () => {
     let editable = false;
     let onRemove = () => {};
     let title = 'Widget Title';
-    const component = shallow(<WidgetFrame children={children} editable={editable} onRemove={onRemove} title={title} />);
-    expect(component.prop('children')).to.equal(children);
-    expect(component.prop('editable')).to.equal(editable);
-    expect(component.prop('title')).to.equal(title);
+    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    let identity =  (el) => { return el; };
+    const component = shallow(
+      <OriginalWidgetFrame
+        children={children}
+        editable={editable}
+        onRemove={onRemove}
+        title={title}
+        connectDragSource={identity}
+      />
+    );
+    expect(component.find(DefaultFrame).first().prop('children')).to.equal(children);
+    expect(component.find(DefaultFrame).first().prop('editable')).to.equal(editable);
+    expect(component.find(DefaultFrame).first().prop('title')).to.equal(title);
   });
 
   it('DefaultFrame onRemove should be called when close is clicked', () => {
@@ -40,8 +61,25 @@ describe('<WidgetFrame />', () => {
         }],
       }],
     };
-    const component = mount(<WidgetFrame layout={layout} rowIndex={0} columnIndex={0} widgetIndex={0} children={children} editable={editable} onRemove={onRemove} title={title} editable/>);
+
+    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    let identity =  (el) => { return el; };
+    const component = mount(
+      <OriginalWidgetFrame
+        layout={layout}
+        rowIndex={0}
+        columnIndex={0}
+        widgetIndex={0}
+        children={children}
+        editable={editable}
+        onRemove={onRemove}
+        title={title}
+        editable
+        connectDragSource={identity}
+      />
+    );
     component.find('a').simulate('click');
+
     expect(onRemove.calledWithExactly({
       rows: [{
         columns: [{
@@ -57,8 +95,19 @@ describe('<WidgetFrame />', () => {
     let layout = {};
     let rowIndex = 1;
     let columnIndex = 2;
-    const component = shallow(<WidgetFrame layout={layout} rowIndex={rowIndex} columnIndex={columnIndex} onAdd={onAdd} editable frame={TestCustomFrame}/>);
-    expect(component.type()).to.equal(TestCustomFrame);
+    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    let identity =  (el) => { return el; };
+    const component = shallow(
+      <OriginalWidgetFrame
+        layout={layout}
+        rowIndex={rowIndex}
+        columnIndex={columnIndex}
+        onAdd={onAdd}
+        editable frame={TestCustomFrame}
+        connectDragSource={identity}
+      />
+    );
+    expect(component.find(TestCustomFrame)).to.have.length(1);
   });
 
   it('Customized frame should be provided with necessary props', () => {
@@ -66,9 +115,21 @@ describe('<WidgetFrame />', () => {
     let editable = false;
     let onRemove = () => {};
     let title = 'Widget Title';
-    const component = shallow(<WidgetFrame children={children} editable={editable} onRemove={onRemove} title={title} frame={TestCustomFrame}/>);
-    expect(component.prop('children')).to.equal(children);
-    expect(component.prop('editable')).to.equal(editable);
-    expect(component.prop('title')).to.equal(title);
+    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    let identity =  (el) => { return el; };
+    const component = shallow(
+      <OriginalWidgetFrame
+        children={children}
+        editable={editable}
+        onRemove={onRemove}
+        title={title}
+        frame={TestCustomFrame}
+        connectDragSource={identity}
+      />
+    );
+
+    expect(component.find(TestCustomFrame).first().prop('children')).to.equal(children);
+    expect(component.find(TestCustomFrame).first().prop('editable')).to.equal(editable);
+    expect(component.find(TestCustomFrame).first().prop('title')).to.equal(title);
   });
 });

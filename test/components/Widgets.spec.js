@@ -32,7 +32,7 @@ describe('<Widgets />', () => {
     const rowIndex = 6;
     const widgetIndex = 0;
     const editable = false;
-    const frame = {};
+    const frame = () => {};
     const onRemove = () => {};
 
     const component = shallow(
