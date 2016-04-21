@@ -5,7 +5,7 @@ Dazzle comes with a default frame built it. By default this frame will be used w
 
 ### How To Build A Custom Frame?
 
-```
+```javascript
 const CustomFrame = ({title, editable, children, onRemove }) => {
   return (
       <div className="custom-frame-container">
@@ -31,7 +31,7 @@ A custom frame is just another React component. Custom frame will be provided wi
 |onRemove | The function that should be called when you want to remove the widget. |
 
 ### How To Provide Custom Frame To Dazzle?
-```
+```javascript
 import Dashboard from 'react-dazzle';
 import CustomFrame from './CustomFrame';
 

@@ -3,7 +3,7 @@ When add widget is clicked, `onAdd` function will be called. The `onAdd` functio
 
 Below is a sample of adding a widget when `Add Widget` is clicked.
 
-````
+```javascript
 import Dashboard, { addWidget } from 'react-dazzle';
 import HelloWorld from './widgets/HelloWorld';
 
@@ -43,7 +43,7 @@ class App extends React.Component {
     );
   }
 }
-````
+```
 
 But in a more practical environment use-case, your should select the widget he wants to add to the dashboard. Dazzle laves the responsibility of presenting the user with the UI where they can pick a widget to you.
 
