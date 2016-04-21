@@ -3,7 +3,7 @@
    <br>
   React Dazzle
   <br>
-  <h4 align="center">Dazzling dashboards in ReactJS</h4>
+  <h4 align="center">Dashboards made easy in React JS</h4>
 </h1>
 
 <p align="center">
@@ -25,6 +25,54 @@ Dazzle is a library for building dashboards with React JS. Dazzle does not depen
 
 Dazzle's goal is to be flexible as possible. Even though there are some UI components readily available for you to start building dashboards fast, you have the complete control to override them as you wish with your own styles and layout.
 
+## Features
+- Grid based layout
+- Add/Remove widgets
+- Drag and drop widget re-ordering
+- UI framework agnostic
+- Customizable
+- Simple
+
+## Installation
+```
+$ npm install react-dazzle --save
+```
+
+## Usage
+```javascript
+import Dashboard, { addWidget } from 'react-dazzle';
+import CounterWidget from './widgets/CounterWidget';
+
+// Default styles.
+import 'react-dazzl/lib/style/style.css';
+
+class App extends React.Component {
+  constructor() {
+    this.state = {
+      layout: {
+        rows: [{
+          columns: [{
+            className: 'col-md-12',
+            widgets: [{name: 'CounterWidget'}],
+          }],
+        }],
+      },
+      widgets: {
+        CounterWidget: {
+          type: CounterWidget,
+          title: 'Counter widget',
+        }
+      }
+    };
+  }
+
+  render() {
+    return <Dashboard  widgets={this.state.widgets} layout={this.state.layout}  />
+  }
+}
+```
+
+## API
 ### Dashboard Component Properties
 | Props | Type| Description | Required |
 | --- | --- | --- | --- |
@@ -36,6 +84,7 @@ Dazzle's goal is to be flexible as possible. Even though there are some UI compo
 | droppableColumnClass  | string |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
 | frame | Component | Customized frame component which should be used instead of the default frame. | No |
 | addWidgetComponent | Component | Customized add widget component which should be used instead of the default `AddWidgetComponent`. | No |
+| addWidgetComponentText | string | Text that should be displayed in the Add Widget component. | No |
 | onAdd(layout, rowIndex, columnIndex) | Function |Will be called when a widget is added.| No |
 | onRemove(layout) | Function |Will be called when a widget is removed.| No |
 | onMove(layout) | Function | Will be called when a widget is moved.| No |
@@ -95,3 +144,12 @@ Provide the `newLayout` back to the dashboard component and it will render the n
 
 ### Remove a widget from the dashboard
 When a widget is removed, `onRemove` method will be called and new layout will be available as an argument of `onRemove` method. The new layout should be provided back to the dashboard component.
+
+### Implementing Custom Widget Frame
+A frame is the component which surrounds a widget. A frame has the title and the close button. Dazzle provides a default frame out of the box. But if you want, you can customize the frame as you like. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info on that here.</a>
+
+### Implementing custom add widget button
+
+
+## License
+MIT © [Raathigeshan](https://twitter.com/Raathigeshan)
