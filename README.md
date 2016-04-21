@@ -88,8 +88,8 @@ class App extends React.Component {
 | onRemove(layout) | Function |Will be called when a widget is removed.| No |
 | onMove(layout) | Function | Will be called when a widget is moved.| No |
 
-### The `widgets` prop
-`widgets` prop takes an object. A sample widgets object would look like below.
+### Providing `widgets`
+`widgets` prop of the Dashboard component takes an object. A sample widgets object would look like below. This object holds all the widgets that could be used in the dashboard.
 
 ```javascript
 {
@@ -107,8 +107,8 @@ class App extends React.Component {
  - `title` property - Title of the widget that should be displayed on top of the widget.
 
 
-### The `layout` prop
-The `layout` prop takes the current layout of the dashboard. Layout could have multiple rows and columns. A sample layout object would look like
+### Dashboard `layout`
+The `layout` prop takes the current layout of the dashboard. Layout could have multiple rows and columns. A sample layout object would look like below.
 
 ```javascript
 {
@@ -126,10 +126,10 @@ The `layout` prop takes the current layout of the dashboard. Layout could have m
 - `className`  property - CSS class(es) that should be given to the column in  the grid layout. Above sample layout uses the classes from bootstrap library. You could use the classes of your CSS library.
 - `widgets` property - An array of widgets that should be rendered in the dashboard. `name` property of the widgets array should be a key from the `layout` object.
 
-### Enabling edit mode
+### Edit mode
 Setting `editable` prop to `true` will make the dashboard editable.
 
-### Add new widget to the dashboard
+### Add new widget
 Adding a new widget is simply updating the layout with the new widget and providing it to the dashboard component.
 
 ```javascript
@@ -141,7 +141,7 @@ Provide the `newLayout` back to the dashboard component and it will render the n
 
 <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/AddWidget.md">More info here on how to show a dialog box and allow user to pick a widget to add.</a>
 
-### Remove a widget from the dashboard
+### Remove a widget
 When a widget is removed, `onRemove` method will be called and new layout will be available as an argument of `onRemove` method. The new layout should be provided back to the dashboard component.
 
 ## Customization
