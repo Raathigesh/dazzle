@@ -23,15 +23,15 @@
 
 Dazzle is a library for building dashboards with React JS. Dazzle does not depend on any front-end libraries but it makes it easier to integrate with them as you wish.
 
-Dazzle's goal is to be flexible as possible. Even though there are some UI components readily available for you to start building dashboards fast, you have the complete control to override them as you wish with your own styles and layout.
+Dazzle's goal is to be flexible as possible. Even though there are some UI components readily available for you to start building dashboards, you have the complete control to override them as you wish with your own styles and layout.
 
 ## Features
 - Grid based layout
 - Add/Remove widgets
 - Drag and drop widget re-ordering
 - UI framework agnostic
-- Customizable
-- Simple
+- Simple yet flexible
+- Well documented
 
 ## Installation
 ```
@@ -40,25 +40,28 @@ $ npm install react-dazzle --save
 
 ## Usage
 ```javascript
+import React, { Component } from 'react';
 import Dashboard, { addWidget } from 'react-dazzle';
+
+// Your widget. Just another react component.
 import CounterWidget from './widgets/CounterWidget';
 
 // Default styles.
 import 'react-dazzl/lib/style/style.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor() {
     this.state = {
       layout: {
         rows: [{
           columns: [{
             className: 'col-md-12',
-            widgets: [{name: 'CounterWidget'}],
+            widgets: [{name: 'WordCounter'}],
           }],
         }],
       },
       widgets: {
-        CounterWidget: {
+        WordCounter: {
           type: CounterWidget,
           title: 'Counter widget',
         }
@@ -77,8 +80,8 @@ class App extends React.Component {
 | --- | --- | --- | --- |
 | layout | Object | Layout of the dashboard. | Yes |
 | widgets | Object| Widgets that could be added to the dashboard. | Yes |
-| editable | Boolean |Weather the dashboard is in editable mode. | No |
-| rowClass | string |CSS class name(s) that should be given to the row. | No |
+| editable | Boolean |Indicates weather the dashboard is in editable mode. | No |
+| rowClass | string |CSS class name(s) that should be given to the row. Default is `row` div element. | No |
 | editableColumnClass | string |CSS class name(s) that should be used when a column is in editable mode. | No |
 | droppableColumnClass  | string |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
 | frameComponent | Component | Customized frame component which should be used instead of the default frame. | No |
@@ -108,23 +111,23 @@ class App extends React.Component {
 
 
 ### Dashboard `layout`
-The `layout` prop takes the current layout of the dashboard. Layout could have multiple rows and columns. A sample layout object would look like below.
+The `layout` prop takes the current layout of the dashboard. Layout could have multiple rows and columns. A sample layout object with a single row and two columns would look like below.
 
 ```javascript
 {
   rows: [{
     columns: [{
       className: 'col-md-6 col-sm-6 col-xs-12',
-      widgets: [{name: 'HelloWorldWidget'}]
+      widgets: [{key: 'HelloWorldWidget'}]
     }, {
       className: 'col-md-6 col-sm-6 col-xs-12',
-      widgets: [{name: 'AnotherWidget'}]
+      widgets: [{key: 'AnotherWidget'}]
     }]
   }]
 }
 ```
 - `className`  property - CSS class(es) that should be given to the column in  the grid layout. Above sample layout uses the classes from bootstrap library. You could use the classes of your CSS library.
-- `widgets` property - An array of widgets that should be rendered in the dashboard. `name` property of the widgets array should be a key from the `layout` object.
+- `widgets` property - An array of widgets that should be rendered in the dashboard. `key` property of the widgets array should be a key from the `layout` object.
 
 ### Edit mode
 Setting `editable` prop to `true` will make the dashboard editable.
@@ -133,7 +136,7 @@ Setting `editable` prop to `true` will make the dashboard editable.
 When user tries to add a new widget, the `onAdd` callback will be called. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/AddWidget.md">More info here on how to handle widget addition.</a>
 
 ### Remove a widget
-When a widget is removed, `onRemove` method will be called and new layout will be available as an argument of `onRemove` method. The new layout should be provided back to the dashboard component.
+When a widget is removed, `onRemove` method will be called and new layout (The layout with the widget removed) will be available as an argument of `onRemove` method. Set the provided layout again to the dashboard to complete the widget removal.
 
 ## Customization
 
@@ -141,7 +144,7 @@ When a widget is removed, `onRemove` method will be called and new layout will b
 A frame is the component which surrounds a widget. A frame has the title and the close button. Dazzle provides a default frame out of the box. But if you want, you can customize the frame as you like. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md">More info here.</a>
 
 ### Implementing custom `AddWidget` component
-Dazzle allows you to customize the `Add Widget` component which appears when you enter edit mode. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info here.</a>
+Dazzle also allows you to customize the `Add Widget` component which appears when you enter edit mode. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info here.</a>
 
 ## License
 MIT © [Raathigeshan](https://twitter.com/Raathigeshan)
