@@ -1,14 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-
-function getEntrySources(sources) {
-  if (process.env.NODE_ENV !== 'production') {
-    sources.push('webpack-hot-middleware/client');
-  }
-
-  return sources;
-}
-
 const basePlugins = [
   new webpack.DefinePlugin({
     __DEV__: process.env.NODE_ENV !== 'production',
@@ -23,11 +14,6 @@ const devPlugins = [
 
 const prodPlugins = [
   new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      warnings: false,
-    },
-  }),
 ];
 
 const plugins = basePlugins
@@ -36,7 +22,7 @@ const plugins = basePlugins
 
 module.exports = {
   entry: {
-    lib: getEntrySources(['./lib/index.js']),
+    lib: ['./lib/index.js'],
   },
 
   resolve: {
@@ -48,14 +34,14 @@ module.exports = {
     filename: '[name].js',
     publicPath: '/',
     sourceMapFilename: '[name].js.map',
-    library: 'dazzle.js',
+    library: 'dazzle',
     libraryTarget: 'umd',
     umdNamedDefine: true,
   },
 
   externals: {
     'react': 'react',
-    'react-dom': 'react-dom',
+    'react-dom': 'react-dom'
   },
 
   devtool: 'source-map',
@@ -71,4 +57,7 @@ module.exports = {
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
     ],
   },
+  node: {
+        global: false
+    }
 };

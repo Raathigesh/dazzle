@@ -96,7 +96,7 @@ class App extends React.Component {
         layout={this.state.layout}
         widgets={this.state.widgets}
         editable={this.state.editMode}
-        addWidgetButtonText="Add"
+        addWidgetComponentText="Add"
         addWidgetComponent={CustomAddWidgetButton}
         onAdd={this.onAdd}
         onMove={this.onMove}

@@ -81,7 +81,7 @@ class App extends React.Component {
 | rowClass | string |CSS class name(s) that should be given to the row. | No |
 | editableColumnClass | string |CSS class name(s) that should be used when a column is in editable mode. | No |
 | droppableColumnClass  | string |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
-| frame | Component | Customized frame component which should be used instead of the default frame. | No |
+| frameComponent | Component | Customized frame component which should be used instead of the default frame. | No |
 | addWidgetComponent | Component | Customized add widget component which should be used instead of the default `AddWidgetComponent`. | No |
 | addWidgetComponentText | string | Text that should be displayed in the Add Widget component. | No |
 | onAdd(layout, rowIndex, columnIndex) | Function |Will be called when a widget is added.| No |
@@ -130,16 +130,7 @@ The `layout` prop takes the current layout of the dashboard. Layout could have m
 Setting `editable` prop to `true` will make the dashboard editable.
 
 ### Add new widget
-Adding a new widget is simply updating the layout with the new widget and providing it to the dashboard component.
-
-```javascript
-import { addWidget } from 'react-dazzle';
-let newLayout = addWidget(layout, rowIndex, columnIndex, widgetName);
-```
-
-Provide the `newLayout` back to the dashboard component and it will render the new widget.
-
-<a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/AddWidget.md">More info here on how to show a dialog box and allow user to pick a widget to add.</a>
+When user tries to add a new widget, the `onAdd` callback will be called. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/AddWidget.md">More info here on how to handle widget addition.</a>
 
 ### Remove a widget
 When a widget is removed, `onRemove` method will be called and new layout will be available as an argument of `onRemove` method. The new layout should be provided back to the dashboard component.
@@ -147,10 +138,10 @@ When a widget is removed, `onRemove` method will be called and new layout will b
 ## Customization
 
 ### Implementing custom `WidgetFrame` component
-A frame is the component which surrounds a widget. A frame has the title and the close button. Dazzle provides a default frame out of the box. But if you want, you can customize the frame as you like. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md">More info on that here.</a>
+A frame is the component which surrounds a widget. A frame has the title and the close button. Dazzle provides a default frame out of the box. But if you want, you can customize the frame as you like. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md">More info here.</a>
 
 ### Implementing custom `AddWidget` component
-Dazzle allows you to customize the `Add Widget` component which appears when you enter edit mode. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info on that here.</a>
+Dazzle allows you to customize the `Add Widget` component which appears when you enter edit mode. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info here.</a>
 
 ## License
 MIT © [Raathigeshan](https://twitter.com/Raathigeshan)

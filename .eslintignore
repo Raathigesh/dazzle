@@ -3,3 +3,4 @@ dist/**
 build/**
 tmp/**
 coverage/**
+node_modules/**
