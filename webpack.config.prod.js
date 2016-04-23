@@ -41,7 +41,7 @@ module.exports = {
 
   externals: {
     'react': 'react',
-    'react-dom': 'react-dom'
+    'react-dom': 'react-dom',
   },
 
   devtool: 'source-map',
@@ -58,6 +58,6 @@ module.exports = {
     ],
   },
   node: {
-        global: false
-    }
+    global: false,
+  },
 };
