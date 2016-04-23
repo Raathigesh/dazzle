@@ -84,7 +84,6 @@
     "winston": "^2.1.1"
   },
   "dependencies": {
-    "lodash.clonedeep": "^4.3.2",
     "react-dnd": "^2.1.4",
     "react-dnd-html5-backend": "^2.1.2"
   },

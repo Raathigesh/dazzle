@@ -25,10 +25,11 @@
 }
 
 .defaultWidgetFrameHeader .remove {
-	margin-left: 140px;
+	float: right;
 	font-size: 11px;
 	cursor: pointer;
 	text-decoration: none;
+	margin-top: 5px;
 }
 
 .add-widget-button {

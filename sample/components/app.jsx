@@ -1,12 +1,17 @@
 import React from 'react';
+import update from 'react/lib/update';
 import Dashboard, { addWidget } from '../../lib';
+
+// App Components
 import Header from './Header';
 import EditBar from './EditBar';
 import Container from './Container';
+
+// Widgets
 import HelloWorld from './widgets/HelloWorld';
 import AnotherWidget from './widgets/AnotherWidget';
 import AddWidgetDialog from './AddWidgetDialog';
-import CustomAddWidgetButton from './CustomAddWidgetButton';
+ // import CustomAddWidgetButton from './CustomAddWidgetButton';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/custom.css';
@@ -20,35 +25,35 @@ class App extends React.Component {
         rows: [{
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'HelloWorld'}],
+            widgets: [{name: 'RocketWidget'}, {name: 'AlienWidget'}, {name: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'AnotherWidget'}],
+            widgets: [{name: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'HelloWorld'}],
+            widgets: [{name: 'RocketWidget'}],
           }],
         }, {
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'AnotherWidget'}],
+            widgets: [{name: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'HelloWorld'}],
+            widgets: [{name: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'AnotherWidget'}],
+            widgets: [{name: 'RocketWidget'}],
           }],
         }],
       },
       widgets: {
-        HelloWorld: {
+        RocketWidget: {
           type: HelloWorld,
-          title: 'Rocket Widget 123',
+          title: 'Rocket Widget',
         },
-        AnotherWidget: {
+        AlienWidget: {
           type: AnotherWidget,
-          title: 'Another Widget',
+          title: 'Alien Widget',
         },
       },
       editMode: false,
@@ -75,6 +80,7 @@ class App extends React.Component {
   }
 
   onMove = (layout) => {
+
     this.setState({
       layout: layout,
     });
@@ -87,6 +93,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state.layout.rows[0].columns[0]);
     return (
     <Container>
       <Header />
@@ -97,7 +104,6 @@ class App extends React.Component {
         widgets={this.state.widgets}
         editable={this.state.editMode}
         addWidgetComponentText="Add"
-        addWidgetComponent={CustomAddWidgetButton}
         onAdd={this.onAdd}
         onMove={this.onMove}
         />
