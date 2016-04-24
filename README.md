@@ -96,7 +96,7 @@ class App extends Component {
 | onRemove(layout) | Function |Will be called when a widget is removed.| No |
 | onMove(layout) | Function | Will be called when a widget is moved.| No |
 
-### Providing `widgets`
+#### Providing `widgets`
 `widgets` prop of the Dashboard component takes an object. A sample widgets object would look like below. This object holds all the widgets that could be used in the dashboard.
 
 ```javascript
@@ -115,7 +115,7 @@ class App extends Component {
  - `title` property - Title of the widget that should be displayed on top of the widget.
 
 
-### Dashboard `layout`
+#### Dashboard `layout`
 The `layout` prop takes the current layout of the dashboard. Layout could have multiple rows and columns. A sample layout object with a single row and two columns would look like below.
 
 ```javascript
@@ -134,13 +134,13 @@ The `layout` prop takes the current layout of the dashboard. Layout could have m
 - `className`  property - CSS class(es) that should be given to the column in  the grid layout. Above sample layout uses the classes from bootstrap library. You could use the classes of your CSS library.
 - `widgets` property - An array of widgets that should be rendered in the dashboard. `key` property of the widgets array should be a key from the `layout` object.
 
-### Edit mode
+#### Edit mode
 Setting `editable` prop to `true` will make the dashboard editable.
 
-### Add new widget
+#### Add new widget
 When user tries to add a new widget, the `onAdd` callback will be called. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/AddWidget.md">More info here on how to handle widget addition.</a>
 
-### Remove a widget
+#### Remove a widget
 When a widget is removed, `onRemove` method will be called and new layout (The layout with the widget removed) will be available as an argument of `onRemove` method. Set the provided layout again to the dashboard to complete the widget removal.
 
 ## Customization
