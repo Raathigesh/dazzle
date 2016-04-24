@@ -1,11 +1,8 @@
 {
   "name": "react-dazzle",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "The simple yet flexible dashbording solution for React",
   "license": "MIT",
-  "engines": {
-    "node": "4.x"
-  },
   "main": "dist/lib.js",
   "style": "lib/style/style.css",
   "scripts": {
@@ -86,8 +83,11 @@
     "winston": "^2.1.1"
   },
   "dependencies": {
-    "react-dnd": "^2.1.4",
-    "react-dnd-html5-backend": "^2.1.2"
+    "react-dnd": "=2.1.4",
+    "react-dnd-html5-backend": "=2.1.2"
+  },
+  "peerDependencies": {
+   "react": "^0.14.0 || ^15.0.0-0"
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"

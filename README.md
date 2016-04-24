@@ -39,7 +39,7 @@ $ npm install react-dazzle --save
 ```
 
 ## Dazzle me
-Here is a demo. Widgets shows fake data but they look damn cool though.
+[Here is a demo.](raathigesh.com/dazzle) Widgets shows fake data though but they look so damn cool (At least for me).
 
 ###### [Sample is available here.]()
 
@@ -86,15 +86,15 @@ class App extends Component {
 | layout | Object | Layout of the dashboard. | Yes |
 | widgets | Object| Widgets that could be added to the dashboard. | Yes |
 | editable | Boolean |Indicates weather the dashboard is in editable mode. | No |
-| rowClass | string |CSS class name(s) that should be given to the row. Default is `row` div element. | No |
-| editableColumnClass | string |CSS class name(s) that should be used when a column is in editable mode. | No |
-| droppableColumnClass  | string |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
+| rowClass | String |CSS class name(s) that should be given to the row. Default is `row` div element. | No |
+| editableColumnClass | String |CSS class name(s) that should be used when a column is in editable mode. | No |
+| droppableColumnClass  | String |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
 | frameComponent | Component | Customized frame component which should be used instead of the default frame. | No |
 | addWidgetComponent | Component | Customized add widget component which should be used instead of the default `AddWidgetComponent`. | No |
-| addWidgetComponentText | string | Text that should be displayed in the Add Widget component. | No |
+| addWidgetComponentText | String | Text that should be displayed in the Add Widget component. | No |
 | onAdd(layout, rowIndex, columnIndex) | Function |Will be called when a widget is added.| No |
-| onRemove(layout) | Function |Will be called when a widget is removed.| No |
-| onMove(layout) | Function | Will be called when a widget is moved.| No |
+| onRemove(layout) | function |Will be called when a widget is removed.| No |
+| onMove(layout) | function | Will be called when a widget is moved.| No |
 
 #### Providing `widgets`
 `widgets` prop of the Dashboard component takes an object. A sample widgets object would look like below. This object holds all the widgets that could be used in the dashboard.

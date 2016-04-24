@@ -18,9 +18,9 @@ const CustomAddWidgetButton = ({text, onClick}) => {
 A custom `Add Widget` Component is just another React component. This component will be provided with 2 props you can make use of as follows.
 
 | Props | Type |  Description |
-| --- | --- |
-| text | string | Text that should be displayed. This text is provided through the `addWidgetComponentText` prop of dashboard.|
-| onClick | Function | The function should be called when user wants to add a widget. |
+| --- | --- | --- |
+| text | String | Text that should be displayed. This text is provided through the `addWidgetComponentText` prop of dashboard. |
+| onClick | function | The function should be called when user wants to add a widget. |
 
 ### How to let dazzle know about this?
 ```javascript

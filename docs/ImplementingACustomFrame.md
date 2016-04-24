@@ -27,12 +27,12 @@ const CustomFrame = ({title, editable, children, onRemove }) => {
 
 A custom frame is just another React component. Custom frame will be provided with 4 properties you can make use of as follows.
 
-| Props | Type |Description |
-| --- | --- |
-|title | string |Title that should be displayed in the frame.|
-|editable | Boolean |Denotes weather the dashboard is in editable mode or not. You can use this |
-|children | React element |Children of the frame. The widget that is going to be rendered. |
-|onRemove | Function |The function that should be called when you want to remove the widget. |
+| Props | Type | Description |
+| --- | --- | --- |
+| title | String | Title that should be displayed in the frame. |
+| editable | Boolean | Denotes weather the dashboard is in editable mode or not. You can use this |
+| children | React element | Children of the frame. The widget that is going to be rendered. |
+| onRemove | function | The function that should be called when you want to remove the widget. |
 
 ### How to let dazzle know about this?
 Well it's extremely simple.
