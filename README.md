@@ -39,9 +39,9 @@ $ npm install react-dazzle --save
 ```
 
 ## Dazzle me
-[Here is a demo.](raathigesh.com/dazzle) Widgets shows fake data though but they look so damn cool (At least for me).
+[Here is a demo.](http://raathigesh.com/dazzle) Widgets shows fake data though but they look so damn cool (At least for me).
 
-###### [Sample is available here.]()
+###### [Repository of the demo is available here.](https://github.com/Raathigesh/Dazzle-Starter-Kit)
 
 ## Usage
 ```javascript
@@ -86,18 +86,18 @@ class App extends Component {
 | layout | Object | Layout of the dashboard. | Yes |
 | widgets | Object| Widgets that could be added to the dashboard. | Yes |
 | editable | Boolean |Indicates weather the dashboard is in editable mode. | No |
-| rowClass | String |CSS class name(s) that should be given to the row. Default is `row` div element. | No |
+| rowClass | String |CSS class name(s) that should be given to the row div element. Default is `row`. | No |
 | editableColumnClass | String |CSS class name(s) that should be used when a column is in editable mode. | No |
 | droppableColumnClass  | String |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
-| frameComponent | Component | Customized frame component which should be used instead of the default frame. | No |
-| addWidgetComponent | Component | Customized add widget component which should be used instead of the default `AddWidgetComponent`. | No |
-| addWidgetComponentText | String | Text that should be displayed in the Add Widget component. | No |
-| onAdd(layout, rowIndex, columnIndex) | Function |Will be called when a widget is added.| No |
+| frameComponent | Component | Customized frame component which should be used instead of the default frame. [More on custom frame components.](https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md) | No |
+| addWidgetComponent | Component | Customized add widget component which should be used instead of the default `AddWidgetComponent`. [More on custom add widget component.](https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md) | No |
+| addWidgetComponentText | String | Text that should be displayed in the Add Widget component. Default is `Add Widget`. | No |
+| onAdd(layout, rowIndex, columnIndex) | function |Will be called when user clicks the `AddWidget` component.| No |
 | onRemove(layout) | function |Will be called when a widget is removed.| No |
 | onMove(layout) | function | Will be called when a widget is moved.| No |
 
 #### Providing `widgets`
-`widgets` prop of the Dashboard component takes an object. A sample widgets object would look like below. This object holds all the widgets that could be used in the dashboard.
+`widgets` prop of the dashboard component takes an object. A sample `widgets` object would look like below. This object holds all the widgets that could be used in the dashboard.
 
 ```javascript
 {
@@ -132,7 +132,7 @@ The `layout` prop takes the current layout of the dashboard. Layout could have m
 }
 ```
 - `className`  property - CSS class(es) that should be given to the column in  the grid layout. Above sample layout uses the classes from bootstrap library. You could use the classes of your CSS library.
-- `widgets` property - An array of widgets that should be rendered in the dashboard. `key` property of the widgets array should be a key from the `layout` object.
+- `widgets` property - An array of widgets that should be rendered in that particular column. `key` property of the widgets array should be a key from the `widgets` object.
 
 #### Edit mode
 Setting `editable` prop to `true` will make the dashboard editable.
@@ -141,7 +141,7 @@ Setting `editable` prop to `true` will make the dashboard editable.
 When user tries to add a new widget, the `onAdd` callback will be called. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/AddWidget.md">More info here on how to handle widget addition.</a>
 
 #### Remove a widget
-When a widget is removed, `onRemove` method will be called and new layout (The layout with the widget removed) will be available as an argument of `onRemove` method. Set the provided layout again to the dashboard to complete the widget removal.
+When a widget is removed, `onRemove` method will be called and new layout (The layout with the widget removed) will be available as an argument of `onRemove` method. Set the provided layout again to the dashboard to complete the widget removal. [The Sample repository has the this feature implemented](https://github.com/Raathigesh/Dazzle-Starter-Kit/blob/master/src/components/Dashboard.jsx).
 
 ## Customization
 

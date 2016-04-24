@@ -1,6 +1,8 @@
 ## Add New Widget To Dashboard
 
-When add widget is clicked, `onAdd` function will be called. The `onAdd` function will be provided with the current layout, index of the row and column where the new widget should be added.
+When add widget is clicked, `onAdd` function will be called. The `onAdd` function will be provided with the current `layout`, index of the `row` and `column` where the new widget should be added.
+
+You could add a new widget to the dashboard by calling the method `addWidget` from dazzle and passing the parameters you received from the `onAdd` callback along with the key of the widget that should be added,
 
 Below is a sample of adding a widget when `Add Widget` is clicked.
 
@@ -51,7 +53,7 @@ But in a more practical use-case, user should select the widget he wants to add 
 
 You could show a modal dialog with all the widgets that could be added and allow the user to select one widget.
 
-When user selects a widget, call the `addWidget` method with the name of the widget along with other parameters.
+When user selects a widget, call the `addWidget` method with the key of the widget along with other parameters.
 
 [The sample project has such implementation](https://github.com/Raathigesh/Dazzle-Starter-Kit). [Refer the `Dashboard` component](https://github.com/Raathigesh/Dazzle-Starter-Kit/blob/master/src/components/Dashboard.jsx) for more details.
 

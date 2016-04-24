@@ -5,6 +5,8 @@ Add widget component is the one which appears on top of columns when dashboard i
 
 ### Show me the code
 
+> Below example uses [React's state-less components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions).
+
 ```javascript
 const CustomAddWidgetButton = ({text, onClick}) => {
   return (
@@ -15,7 +17,7 @@ const CustomAddWidgetButton = ({text, onClick}) => {
 };
 ```
 
-A custom `Add Widget` Component is just another React component. This component will be provided with 2 props you can make use of as follows.
+A custom `AddWidget` component is just another React component. This component will be provided with 2 props.
 
 | Props | Type |  Description |
 | --- | --- | --- |
