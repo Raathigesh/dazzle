@@ -1,5 +1,4 @@
 import React from 'react';
-import update from 'react/lib/update';
 import Dashboard, { addWidget } from '../../lib';
 
 // App Components
@@ -25,24 +24,24 @@ class App extends React.Component {
         rows: [{
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'RocketWidget'}, {name: 'AlienWidget'}, {name: 'RocketWidget'}],
+            widgets: [{key: 'RocketWidget'}, {key: 'AlienWidget'}, {key: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'RocketWidget'}],
+            widgets: [{key: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'RocketWidget'}],
+            widgets: [{key: 'RocketWidget'}],
           }],
         }, {
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'RocketWidget'}],
+            widgets: [{key: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'RocketWidget'}],
+            widgets: [{key: 'RocketWidget'}],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{name: 'RocketWidget'}],
+            widgets: [{key: 'RocketWidget'}],
           }],
         }],
       },
@@ -80,7 +79,6 @@ class App extends React.Component {
   }
 
   onMove = (layout) => {
-
     this.setState({
       layout: layout,
     });
@@ -93,7 +91,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.layout.rows[0].columns[0]);
     return (
     <Container>
       <Header />

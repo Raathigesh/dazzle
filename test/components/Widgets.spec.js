@@ -7,7 +7,7 @@ import TestComponent from '../fake/TestComponent';
 
 describe('<Widgets />', () => {
   it('Should render widgets with widget frames', () => {
-    const widgets = [{name: 'HelloWorld'}];
+    const widgets = [{key: 'HelloWorld'}];
     const widgetTypes = {
       HelloWorld: {
         type: TestComponent,
@@ -19,7 +19,7 @@ describe('<Widgets />', () => {
   });
 
   it('Should pass the properties to WidgetFrame', () => {
-    const widgets = [{name: 'HelloWorld'}];
+    const widgets = [{key: 'HelloWorld'}];
     const widgetTypes = {
       HelloWorld: {
         type: TestComponent,
@@ -60,7 +60,7 @@ describe('<Widgets />', () => {
   });
 
   it('Frame should have the actual widget as children', () => {
-    const widgets = [{name: 'HelloWorld'}];
+    const widgets = [{key: 'HelloWorld'}];
     const widgetTypes = {
       HelloWorld: {
         type: TestComponent,

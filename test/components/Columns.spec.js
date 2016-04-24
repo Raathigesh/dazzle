@@ -11,13 +11,13 @@ import ContainerWithDndContext from '../fake/ContainerWithDndContext';
 function setup() {
   const columns = [{
     className: 'col-md-4 col-sm-6 col-xs-6',
-    widgets: [{name: 'HelloWorld'}],
+    widgets: [{key: 'HelloWorld'}],
   }, {
     className: 'col-md-4 col-sm-6 col-xs-6',
-    widgets: [{name: 'HelloWorld'}],
+    widgets: [{key: 'HelloWorld'}],
   }, {
     className: 'col-md-4 col-sm-6 col-xs-6',
-    widgets: [{name: 'HelloWorld'}],
+    widgets: [{key: 'HelloWorld'}],
   }];
 
   const widgets = {
