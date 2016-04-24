@@ -38,8 +38,8 @@ Dazzle's goal is to be flexible and simple. Even though there are some UI compon
 $ npm install react-dazzle --save
 ```
 
-## Dazzle me (aka Demo)
-Here is a demo. Widgets shows fake data but they look damn cool, So what do you care!
+## Dazzle me
+Here is a demo. Widgets shows fake data but they look damn cool though.
 
 ###### [Sample is available here.]()
 
@@ -145,10 +145,10 @@ When a widget is removed, `onRemove` method will be called and new layout (The l
 
 ## Customization
 
-### Implementing custom `WidgetFrame` component
+#### Implementing custom `WidgetFrame` component
 A frame is the component which surrounds a widget. A frame has the title and the close button. Dazzle provides a default frame out of the box. But if you want, you can customize the frame as you like. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md">More info here.</a>
 
-### Implementing custom `AddWidget` component
+#### Implementing custom `AddWidget` component
 Dazzle also allows you to customize the `Add Widget` component which appears when you enter edit mode. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info here.</a>
 
 ## Issues
