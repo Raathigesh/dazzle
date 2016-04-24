@@ -21,9 +21,9 @@
 </p>
 <br>
 
-Dazzle is a library for building dashboards with React JS. Dazzle does not depend on any front-end libraries but it makes it easier to integrate with them as you wish.
+Dazzle is a library for building dashboards with React JS. Dazzle does not depend on any front-end libraries but it makes it easier to integrate with them.
 
-Dazzle's goal is to be flexible as possible. Even though there are some UI components readily available for you to start building dashboards, you have the complete control to override them as you wish with your own styles and layout.
+Dazzle's goal is to be flexible and simple. Even though there are some UI components readily available out of the box, you have the complete control to override them as you wish with your own styles and layout.
 
 ## Features
 - Grid based layout
@@ -51,20 +51,20 @@ import 'react-dazzl/lib/style/style.css';
 
 class App extends Component {
   constructor() {
-    this.state = {
-      layout: {
-        rows: [{
-          columns: [{
-            className: 'col-md-12',
-            widgets: [{name: 'WordCounter'}],
-          }],
-        }],
-      },
+    this.state = {      
       widgets: {
         WordCounter: {
           type: CounterWidget,
           title: 'Counter widget',
         }
+      },
+      layout: {
+        rows: [{
+          columns: [{
+            className: 'col-md-12',
+            widgets: [{key: 'WordCounter'}],
+          }],
+        }],
       }
     };
   }

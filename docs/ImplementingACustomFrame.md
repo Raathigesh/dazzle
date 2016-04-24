@@ -44,4 +44,10 @@ import CustomFrame from './CustomFrame';
 <Dashboard /* Other props goes here*/ frame={CustomFrame}  />
 ```
 
-Yep! That's all! Now all the widgets will use your fancy frame.
+Now all the widgets will use your fancy frame.
+
+#### More docs
+- [Readme](../README.md)
+- [Add a widget](./AddWidget.md)
+- [Implementing custom Frame component](./ImplementingACustomFrame.md)
+- [Implementing custom AddWidget component](./ImplementingCustomAddWidgetButton.md)

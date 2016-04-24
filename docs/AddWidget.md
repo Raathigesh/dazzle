@@ -54,3 +54,9 @@ You could show a modal dialog with all the widgets that could be added and allow
 When user selects a widget, call the `addWidget` method with the name of the widget along with other parameters.
 
 This sample has such implementation. // TODO
+
+#### More docs
+- [Readme](../README.md)
+- [Add a widget](./AddWidget.md)
+- [Implementing custom Frame component](./ImplementingACustomFrame.md)
+- [Implementing custom AddWidget component](./ImplementingCustomAddWidgetButton.md)
