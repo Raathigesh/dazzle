@@ -1,4 +1,4 @@
-## Add New Widget To Dashboard
+## Add new widget to dashboard
 
 When add widget is clicked, `onAdd` function will be called. The `onAdd` function will be provided with the current `layout`, index of the `row` and `column` where the new widget should be added.
 

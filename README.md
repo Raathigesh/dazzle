@@ -89,8 +89,8 @@ class App extends Component {
 | rowClass | String |CSS class name(s) that should be given to the row div element. Default is `row`. | No |
 | editableColumnClass | String |CSS class name(s) that should be used when a column is in editable mode. | No |
 | droppableColumnClass  | String |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |
-| frameComponent | Component | Customized frame component which should be used instead of the default frame. [More on custom frame components.](https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md) | No |
-| addWidgetComponent | Component | Customized add widget component which should be used instead of the default `AddWidgetComponent`. [More on custom add widget component.](https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md) | No |
+| frameComponent | Component | Customized frame component which should be used instead of the default frame. [More on custom frame component.](https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingACustomFrame.md) | No |
+| addWidgetComponent | Component | Customized add widget component which should be used instead of the default AddWidget component. [More on custom add widget component.](https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md) | No |
 | addWidgetComponentText | String | Text that should be displayed in the Add Widget component. Default is `Add Widget`. | No |
 | onAdd(layout, rowIndex, columnIndex) | function |Will be called when user clicks the `AddWidget` component.| No |
 | onRemove(layout) | function |Will be called when a widget is removed.| No |
