@@ -53,7 +53,7 @@ You could show a modal dialog with all the widgets that could be added and allow
 
 When user selects a widget, call the `addWidget` method with the name of the widget along with other parameters.
 
-This sample has such implementation. // TODO
+[The sample project has such implementation](https://github.com/Raathigesh/Dazzle-Starter-Kit). [Refer the `Dashboard` component](https://github.com/Raathigesh/Dazzle-Starter-Kit/blob/master/src/components/Dashboard.jsx) for more details.
 
 #### More docs
 - [Readme](../README.md)

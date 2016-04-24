@@ -31,12 +31,17 @@ Dazzle's goal is to be flexible and simple. Even though there are some UI compon
 - Drag and drop widget re-ordering
 - UI framework agnostic
 - Simple yet flexible
-- Well documented
+- Well documented (It's a feature! Don't you think?)
 
 ## Installation
 ```
 $ npm install react-dazzle --save
 ```
+
+## Dazzle me (aka Demo)
+Here is a demo. Widgets shows fake data but they look damn cool, So what do you care!
+
+###### [Sample is available here.]()
 
 ## Usage
 ```javascript
@@ -145,6 +150,9 @@ A frame is the component which surrounds a widget. A frame has the title and the
 
 ### Implementing custom `AddWidget` component
 Dazzle also allows you to customize the `Add Widget` component which appears when you enter edit mode. <a href="https://github.com/Raathigesh/Dazzle/blob/master/docs/ImplementingCustomAddWidgetButton.md">More info here.</a>
+
+## Issues
+- Improve drag and drop experience ([#1](https://github.com/Raathigesh/Dazzle/issues/1))
 
 ## License
 MIT © [Raathigeshan](https://twitter.com/Raathigeshan)
