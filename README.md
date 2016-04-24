@@ -46,7 +46,7 @@ Here is a demo. Widgets shows fake data but they look damn cool though.
 ## Usage
 ```javascript
 import React, { Component } from 'react';
-import Dashboard, { addWidget } from 'react-dazzle';
+import Dashboard from 'react-dazzle';
 
 // Your widget. Just another react component.
 import CounterWidget from './widgets/CounterWidget';

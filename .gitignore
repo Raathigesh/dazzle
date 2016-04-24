@@ -28,7 +28,7 @@ build/Release
 node_modules
 
 # Build directory
-dist
+# dist
 
 # Editor temporary files
 *~

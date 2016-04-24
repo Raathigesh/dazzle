@@ -28,7 +28,10 @@
     "react",
     "dashboard",
     "react-component",
-    "widgets"
+    "widgets",
+    "react-dazzle",
+    "analytics-dashboard",
+    "analytics"
   ],
   "repository": {
     "type": "git",
