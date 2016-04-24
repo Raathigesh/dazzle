@@ -76,7 +76,7 @@ describe('<Columns />', () => {
           onRemove={onRemove}
           layout={layout}
           rowIndex={rowIndex}
-          frame={TestCustomFrame}
+          frameComponent={TestCustomFrame}
           editable />
       </ContainerWithDndContext>
     );
@@ -87,6 +87,6 @@ describe('<Columns />', () => {
     expect(component.find(Widgets).first().prop('rowIndex')).to.equal(rowIndex);
     expect(component.find(Widgets).first().prop('columnIndex')).to.equal(0);
     expect(component.find(Widgets).first().prop('editable')).to.equal(true);
-    expect(component.find(Widgets).first().prop('frame')).to.equal(TestCustomFrame);
+    expect(component.find(Widgets).first().prop('frameComponent')).to.equal(TestCustomFrame);
   });
 });

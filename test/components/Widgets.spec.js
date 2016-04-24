@@ -44,7 +44,7 @@ describe('<Widgets />', () => {
       rowIndex={rowIndex}
       widgetIndex={widgetIndex}
       editable={editable}
-      frame={frame}
+      frameComponent={frame}
       onRemove={onRemove}
       />
     );
@@ -55,7 +55,7 @@ describe('<Widgets />', () => {
     expect(component.find(WidgetFrame).at(0).prop('rowIndex')).to.equal(rowIndex);
     expect(component.find(WidgetFrame).at(0).prop('widgetIndex')).to.equal(widgetIndex);
     expect(component.find(WidgetFrame).at(0).prop('editable')).to.equal(editable);
-    expect(component.find(WidgetFrame).at(0).prop('frame')).to.equal(frame);
+    expect(component.find(WidgetFrame).at(0).prop('frameComponent')).to.equal(frame);
     expect(component.find(WidgetFrame).at(0).prop('onRemove')).to.equal(onRemove);
   });
 

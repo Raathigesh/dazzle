@@ -1,10 +1,11 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import WidgetFrame from '../../lib/components/WidgetFrame';
 import DefaultFrame from '../../lib/components/DefaultFrame';
 import TestCustomFrame from '../fake/TestCustomFrame';
+import ContainerWithDndContext from '../fake/ContainerWithDndContext';
 
 describe('<WidgetFrame />', () => {
   it('Default frame should be used when customized frame is not provided', () => {
@@ -14,15 +15,18 @@ describe('<WidgetFrame />', () => {
     let columnIndex = 2;
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     let identity =  (el) => { return el; };
-    const component = shallow(
-      <OriginalWidgetFrame
-        layout={layout}
-        rowIndex={rowIndex}
-        columnIndex={columnIndex}
-        onAdd={onAdd}
-        editable
-        connectDragSource={identity}
-      />
+    const component = mount(
+      <ContainerWithDndContext>
+        <OriginalWidgetFrame
+          layout={layout}
+          rowIndex={rowIndex}
+          columnIndex={columnIndex}
+          onAdd={onAdd}
+          editable
+          connectDragSource={identity}
+          connectDropTarget={identity}
+        />
+      </ContainerWithDndContext>
     );
     expect(component.find(DefaultFrame)).to.have.length(1);
   });
@@ -34,14 +38,17 @@ describe('<WidgetFrame />', () => {
     let title = 'Widget Title';
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     let identity =  (el) => { return el; };
-    const component = shallow(
-      <OriginalWidgetFrame
-        children={children}
-        editable={editable}
-        onRemove={onRemove}
-        title={title}
-        connectDragSource={identity}
-      />
+    const component = mount(
+      <ContainerWithDndContext>
+        <OriginalWidgetFrame
+          children={children}
+          editable={editable}
+          onRemove={onRemove}
+          title={title}
+          connectDragSource={identity}
+          connectDropTarget={identity}
+        />
+      </ContainerWithDndContext>
     );
     expect(component.find(DefaultFrame).first().prop('children')).to.equal(children);
     expect(component.find(DefaultFrame).first().prop('editable')).to.equal(editable);
@@ -65,18 +72,21 @@ describe('<WidgetFrame />', () => {
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     let identity =  (el) => { return el; };
     const component = mount(
-      <OriginalWidgetFrame
-        layout={layout}
-        rowIndex={0}
-        columnIndex={0}
-        widgetIndex={0}
-        children={children}
-        editable={editable}
-        onRemove={onRemove}
-        title={title}
-        editable
-        connectDragSource={identity}
-      />
+      <ContainerWithDndContext>
+        <OriginalWidgetFrame
+          layout={layout}
+          rowIndex={0}
+          columnIndex={0}
+          widgetIndex={0}
+          children={children}
+          editable={editable}
+          onRemove={onRemove}
+          title={title}
+          editable
+          connectDragSource={identity}
+          connectDropTarget={identity}
+        />
+      </ContainerWithDndContext>
     );
     component.find('a').simulate('click');
 
@@ -97,15 +107,19 @@ describe('<WidgetFrame />', () => {
     let columnIndex = 2;
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     let identity =  (el) => { return el; };
-    const component = shallow(
-      <OriginalWidgetFrame
-        layout={layout}
-        rowIndex={rowIndex}
-        columnIndex={columnIndex}
-        onAdd={onAdd}
-        editable frame={TestCustomFrame}
-        connectDragSource={identity}
-      />
+    const component = mount(
+      <ContainerWithDndContext>
+        <OriginalWidgetFrame
+          layout={layout}
+          rowIndex={rowIndex}
+          columnIndex={columnIndex}
+          onAdd={onAdd}
+          editable
+          frameComponent={TestCustomFrame}
+          connectDragSource={identity}
+          connectDropTarget={identity}
+        />
+    </ContainerWithDndContext>
     );
     expect(component.find(TestCustomFrame)).to.have.length(1);
   });
@@ -117,15 +131,18 @@ describe('<WidgetFrame />', () => {
     let title = 'Widget Title';
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     let identity =  (el) => { return el; };
-    const component = shallow(
-      <OriginalWidgetFrame
-        children={children}
-        editable={editable}
-        onRemove={onRemove}
-        title={title}
-        frame={TestCustomFrame}
-        connectDragSource={identity}
-      />
+    const component = mount(
+      <ContainerWithDndContext>
+        <OriginalWidgetFrame
+          children={children}
+          editable={editable}
+          onRemove={onRemove}
+          title={title}
+          frameComponent={TestCustomFrame}
+          connectDragSource={identity}
+          connectDropTarget={identity}
+        />
+      </ContainerWithDndContext>
     );
 
     expect(component.find(TestCustomFrame).first().prop('children')).to.equal(children);
