@@ -11,6 +11,10 @@
     <img src="https://img.shields.io/npm/l/express.svg?maxAge=2592000&style=flat-square"
          alt="License">
   </a>
+  <a href="https://www.npmjs.com/package/react-dazzle">
+    <img src="https://img.shields.io/npm/v/react-dazzle.svg?style=flat-square"
+         alt="NPM Version">
+  </a>
   <a href="https://travis-ci.org/Raathigesh/Dazzle">
     <img src="https://img.shields.io/travis/Raathigesh/Dazzle.svg?style=flat-square"
          alt="Travis Build">
