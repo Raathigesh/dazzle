@@ -16,7 +16,8 @@ script:
   - npm run build
   - npm run test
 after_success:
-  - npm run report-cover  
+  - npm run report-cover
+  - npm run semantic-release
 branches:
   except:
     - "/^v\\d+\\.\\d+\\.\\d+$/"
