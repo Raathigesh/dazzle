@@ -107,7 +107,10 @@ class App extends Component {
 {
   HelloWorldWidget: {
     type: HelloWorld,
-    title: 'Hello World Title'
+    title: 'Hello World Title',
+    props: {
+      text: 'Hello Humans!'
+    }
   },
   AnotherWidget: {
     type: AnotherWidget,
@@ -117,6 +120,7 @@ class App extends Component {
  ```
  - `type` property - Should be a React component function or class.
  - `title` property - Title of the widget that should be displayed on top of the widget.
+ - `props` property - Props that should be provided to the widget.
 
 
 #### Dashboard `layout`
