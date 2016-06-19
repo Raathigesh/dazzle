@@ -56,7 +56,7 @@ import Dashboard from 'react-dazzle';
 import CounterWidget from './widgets/CounterWidget';
 
 // Default styles.
-import 'react-dazzl/lib/style/style.css';
+import 'react-dazzle/lib/style/style.css';
 
 class App extends Component {
   constructor() {
