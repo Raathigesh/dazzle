@@ -1,6 +1,6 @@
 {
   "name": "react-dazzle",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "The simple yet flexible dashbording solution for React",
   "license": "MIT",
   "main": "dist/lib.js",
@@ -87,7 +87,7 @@
     "react-dnd-html5-backend": "=2.1.2"
   },
   "peerDependencies": {
-   "react": "^0.14.0 || ^15.0.0-0"
+    "react": "^0.14.0 || ^15.0.0-0"
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
