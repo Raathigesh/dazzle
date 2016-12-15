@@ -1,6 +1,6 @@
 {
   "name": "react-dazzle",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "The simple yet flexible dashbording solution for React",
   "license": "MIT",
   "main": "dist/lib.js",
