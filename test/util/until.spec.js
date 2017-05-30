@@ -6,7 +6,7 @@ function setup() {
     rows: [{
       columns: [{
         className: 'col-md-4 col-sm-6 col-xs-6',
-        widgets: [{key: 'HelloWorld'}],
+        widgets: [{ key: 'HelloWorld' }],
       }, {
         className: 'col-md-4 col-sm-6 col-xs-6',
         widgets: [],
@@ -22,7 +22,7 @@ describe('Util.addWidget()', () => {
       rows: [{
         columns: [{
           className: 'col-md-4 col-sm-6 col-xs-6',
-          widgets: [{key: 'HelloWorld'}, {key: 'NewWidget'}],
+          widgets: [{ key: 'HelloWorld' }, { key: 'NewWidget' }],
         }, {
           className: 'col-md-4 col-sm-6 col-xs-6',
           widgets: [],

@@ -40,6 +40,7 @@ const plugins = basePlugins
   .concat(process.env.NODE_ENV === 'production' ? prodPlugins : [])
   .concat(process.env.NODE_ENV === 'development' ? devPlugins : []);
 
+/* eslint max-len: "off" */
 module.exports = {
   entry: {
     app: getEntrySources(['./sample/index.js']),
@@ -61,7 +62,7 @@ module.exports = {
   },
 
   devtool: 'source-map',
-  plugins: plugins,
+  plugins,
 
   devServer: {
     historyApiFallback: { index: '/' },

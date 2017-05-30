@@ -7,7 +7,7 @@ import TestComponent from '../fake/TestComponent';
 
 describe('<Widgets />', () => {
   it('Should render widgets with widget frames', () => {
-    const widgets = [{key: 'HelloWorld'}];
+    const widgets = [{ key: 'HelloWorld' }];
     const widgetTypes = {
       HelloWorld: {
         type: TestComponent,
@@ -19,7 +19,7 @@ describe('<Widgets />', () => {
   });
 
   it('Should pass the properties to WidgetFrame', () => {
-    const widgets = [{key: 'HelloWorld'}];
+    const widgets = [{ key: 'HelloWorld' }];
     const widgetTypes = {
       HelloWorld: {
         type: TestComponent,
@@ -37,15 +37,15 @@ describe('<Widgets />', () => {
 
     const component = shallow(
       <Widgets
-      widgets={widgets}
-      widgetTypes={widgetTypes}
-      layout={layout}
-      columnIndex={columnIndex}
-      rowIndex={rowIndex}
-      widgetIndex={widgetIndex}
-      editable={editable}
-      frameComponent={frame}
-      onRemove={onRemove}
+        widgets={widgets}
+        widgetTypes={widgetTypes}
+        layout={layout}
+        columnIndex={columnIndex}
+        rowIndex={rowIndex}
+        widgetIndex={widgetIndex}
+        editable={editable}
+        frameComponent={frame}
+        onRemove={onRemove}
       />
     );
 
@@ -60,7 +60,7 @@ describe('<Widgets />', () => {
   });
 
   it('Frame should have the actual widget as children', () => {
-    const widgets = [{key: 'HelloWorld'}];
+    const widgets = [{ key: 'HelloWorld' }];
     const widgetTypes = {
       HelloWorld: {
         type: TestComponent,
@@ -70,8 +70,8 @@ describe('<Widgets />', () => {
 
     const component = shallow(
       <Widgets
-      widgets={widgets}
-      widgetTypes={widgetTypes}
+        widgets={widgets}
+        widgetTypes={widgetTypes}
       />
     );
 

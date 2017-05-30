@@ -24,24 +24,24 @@ class App extends React.Component {
         rows: [{
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{key: 'RocketWidget'}, {key: 'AlienWidget'}, {key: 'RocketWidget'}],
+            widgets: [{ key: 'RocketWidget' }, { key: 'AlienWidget' }, { key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{key: 'RocketWidget'}],
+            widgets: [{ key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{key: 'RocketWidget'}],
+            widgets: [{ key: 'RocketWidget' }],
           }],
         }, {
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{key: 'RocketWidget'}],
+            widgets: [{ key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{key: 'RocketWidget'}],
+            widgets: [{ key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{key: 'RocketWidget'}],
+            widgets: [{ key: 'RocketWidget' }],
           }],
         }],
       },
@@ -63,7 +63,7 @@ class App extends React.Component {
 
   onRemove = (layout) => {
     this.setState({
-      layout: layout,
+      layout,
     });
   }
 
@@ -80,7 +80,7 @@ class App extends React.Component {
 
   onMove = (layout) => {
     this.setState({
-      layout: layout,
+      layout,
     });
   }
 
@@ -91,21 +91,22 @@ class App extends React.Component {
   }
 
   render() {
+    /* eslint max-len: "off" */
     return (
-    <Container>
-      <Header />
-      <EditBar onEdit={this.toggleEdit} />
-      <Dashboard
-        onRemove={this.onRemove}
-        layout={this.state.layout}
-        widgets={this.state.widgets}
-        editable={this.state.editMode}
-        addWidgetComponentText="Add"
-        onAdd={this.onAdd}
-        onMove={this.onMove}
+      <Container>
+        <Header />
+        <EditBar onEdit={this.toggleEdit} />
+        <Dashboard
+          onRemove={this.onRemove}
+          layout={this.state.layout}
+          widgets={this.state.widgets}
+          editable={this.state.editMode}
+          addWidgetComponentText="Add"
+          onAdd={this.onAdd}
+          onMove={this.onMove}
         />
-      <AddWidgetDialog widgets={this.state.widgets} isModalOpen={this.state.isModalOpen} onRequestClose={this.onRequestClose} onWidgetSelect={this.widgetSelected}/>
-    </Container>
+        <AddWidgetDialog widgets={this.state.widgets} isModalOpen={this.state.isModalOpen} onRequestClose={this.onRequestClose} onWidgetSelect={this.widgetSelected} />
+      </Container>
     );
   }
 
@@ -116,7 +117,7 @@ class App extends React.Component {
   };
 
   widgetSelected = (widgetName) => {
-    const {layout, rowIndex, columnIndex} = this.state.addWidgetOptions;
+    const { layout, rowIndex, columnIndex } = this.state.addWidgetOptions;
     this.setState({
       layout: addWidget(layout, rowIndex, columnIndex, widgetName),
     });

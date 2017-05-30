@@ -40,12 +40,12 @@ module.exports = {
   },
 
   externals: {
-    'react': 'react',
+    react: 'react',
     'react-dom': 'react-dom',
   },
 
   devtool: 'source-map',
-  plugins: plugins,
+  plugins,
 
   module: {
     preLoaders: [

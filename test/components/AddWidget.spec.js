@@ -7,7 +7,7 @@ import AddWidget from '../../lib/components/AddWidget';
 describe('<AddWidget />', () => {
   it('Should render the children', () => {
     const widgetText = 'Add new widget yo!';
-    const component = shallow(<AddWidget text={widgetText}/>);
+    const component = shallow(<AddWidget text={widgetText} />);
     expect(component.find('a').first().text()).to.equal(widgetText);
   });
 

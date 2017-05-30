@@ -1,12 +1,11 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const CustomAddWidgetButton = ({text, onClick}) => {
-  return (
-    <div>
-      <button onClick={onClick}>{text}</button>
-    </div>
-  );
-};
+const CustomAddWidgetButton = ({ text, onClick }) => (
+  <div>
+    <button onClick={onClick}>{text}</button>
+  </div>
+);
 
 CustomAddWidgetButton.propTypes = {
   text: PropTypes.string,
