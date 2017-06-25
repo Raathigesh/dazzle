@@ -1,6 +1,6 @@
 {
   "name": "react-dazzle",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "The simple yet flexible dashbording solution for React",
   "license": "MIT",
   "main": "dist/lib.js",
@@ -37,8 +37,7 @@
     "url": "https://github.com/Raathigesh/Dazzle/issues"
   },
   "devDependencies": {
-    "babel": "^6.3.26",
-    "babel-cli": "^6.6.5",
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.4.0",
     "babel-eslint": "^6.0.0",
     "babel-loader": "^6.2.1",
