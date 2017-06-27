@@ -1,4 +1,4 @@
-<h1 align="center">
+﻿<h1 align="center">
   <img src="https://raw.githubusercontent.com/Raathigesh/Dazzle/master/docs/Dazzle.png" alt="Dazzle">
    <br>
   React Dazzle
@@ -60,6 +60,7 @@ import 'react-dazzle/lib/style/style.css';
 
 class App extends Component {
   constructor() {
+    super();
     this.state = {      
       widgets: {
         WordCounter: {
@@ -82,6 +83,8 @@ class App extends Component {
     return <Dashboard  widgets={this.state.widgets} layout={this.state.layout}  />
   }
 }
+
+export default App;
 ```
 
 ## API
