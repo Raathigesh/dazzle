@@ -89,7 +89,7 @@ class App extends Component {
 | --- | --- | --- | --- |
 | layout | Object | Layout of the dashboard. | Yes |
 | widgets | Object| Widgets that could be added to the dashboard. | Yes |
-| editable | Boolean |Indicates whether the dashboard is in editable mode. | No |
+| editable | Boolean |Indicates weather the dashboard is in editable mode. | No |
 | rowClass | String |CSS class name(s) that should be given to the row div element. Default is `row`. | No |
 | editableColumnClass | String |CSS class name(s) that should be used when a column is in editable mode. | No |
 | droppableColumnClass  | String |CSS class name(s) that should be used when a widget is about to be dropped in a column. | No |

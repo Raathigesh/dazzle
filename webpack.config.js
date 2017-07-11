@@ -49,7 +49,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx','.ts', '.tsx'],
   },
 
   output: {
@@ -76,6 +76,7 @@ module.exports = {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+      { test: /\.(ts|tsx)$/, loaders: ['react-hot', 'babel','ts-loader'], exclude: /node_modules/ },      
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.(png|jpg|jpeg|gif|svg)$/, loader: 'url-loader?prefix=img/&limit=5000' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },

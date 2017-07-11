@@ -1,0 +1,29 @@
+{
+	"rules": {
+		"class-name": true,
+		"curly": true,		
+		"no-require-imports": false,
+		"no-var-requires": false,
+		"interface-name": true,
+		"no-consecutive-blank-lines": true,
+		"no-shadowed-variable": true,
+		"no-var-keyword": true,
+		"no-unreachable":true,
+		"quotemark": [
+			"double",
+			"avoid-escape"
+		],
+		"radix": true,
+		"semicolon": true,
+		"switch-default": true,
+		"triple-equals": [
+			true,
+			"allow-null-check"
+		],
+		"variable-name": [
+			true,
+			"check-format",
+			"ban-keywords"
+		]
+	}
+}
