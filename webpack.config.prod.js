@@ -22,11 +22,11 @@ const plugins = basePlugins
 
 module.exports = {
   entry: {
-    lib: ['./lib/index.js'],
+    lib: ['./lib/index.ts'],
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.ts', '.tsx'],
   },
 
   output: {
@@ -55,6 +55,7 @@ module.exports = {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+      { test: /\.(ts|tsx)$/, loaders: ['react-hot', 'babel','ts-loader'], exclude: /node_modules/ },   
     ],
   },
   node: {

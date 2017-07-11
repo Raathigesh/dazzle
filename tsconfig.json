@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"jsx": "react",
+		"module": "commonjs",
+		"sourceMap": true,
+		"experimentalDecorators": true,
+		"outDir": "dist",
+		"lib": [
+			"es2017",
+			"dom"
+		]
+	},
+	"include": [
+		"lib/**/*.ts",
+		"lib/**/*.tsx",
+		"test/**/*.ts",
+		"test/**/*.tsx"
+	]
+}
