@@ -14,7 +14,7 @@ describe('<WidgetFrame />', () => {
     let rowIndex = 1;
     let columnIndex = 2;
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity =  (el) => { return el; };
+    let identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -37,7 +37,7 @@ describe('<WidgetFrame />', () => {
     let onRemove = () => {};
     let title = 'Widget Title';
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity =  (el) => { return el; };
+    let identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -64,13 +64,13 @@ describe('<WidgetFrame />', () => {
       rows: [{
         columns: [{
           className: 'col-md-4',
-          widgets: [{name: 'HelloWorld'}],
+          widgets: [{ name: 'HelloWorld' }],
         }],
       }],
     };
 
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity =  (el) => { return el; };
+    let identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -106,7 +106,7 @@ describe('<WidgetFrame />', () => {
     let rowIndex = 1;
     let columnIndex = 2;
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity =  (el) => { return el; };
+    let identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -130,7 +130,7 @@ describe('<WidgetFrame />', () => {
     let onRemove = () => {};
     let title = 'Widget Title';
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity =  (el) => { return el; };
+    let identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame

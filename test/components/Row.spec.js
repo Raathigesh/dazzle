@@ -11,13 +11,13 @@ import ContainerWithDndContext from '../fake/ContainerWithDndContext';
 function setup() {
   const columns = [{
     className: 'col-md-4 col-sm-6 col-xs-6',
-    widgets: [{key: 'HelloWorld'}],
+    widgets: [{ key: 'HelloWorld' }],
   }, {
     className: 'col-md-4 col-sm-6 col-xs-6',
-    widgets: [{key: 'HelloWorld'}],
+    widgets: [{ key: 'HelloWorld' }],
   }, {
     className: 'col-md-4 col-sm-6 col-xs-6',
-    widgets: [{key: 'HelloWorld'}],
+    widgets: [{ key: 'HelloWorld' }],
   }];
 
   const widgets = {
@@ -38,6 +38,7 @@ function setup() {
 }
 
 describe('<Row />', () => {
+  /* eslint max-len: "off" */
   it('Should render the correct number of <Column />', () => {
     const { columns, widgets } = setup();
     const component = mount(<ContainerWithDndContext><Row columns={columns} widgets={widgets} /></ContainerWithDndContext>);
@@ -71,7 +72,8 @@ describe('<Row />', () => {
           onAdd={onAdd}
           layout={layout}
           rowIndex={rowIndex}
-          editable/>
+          editable
+        />
       </ContainerWithDndContext>
     );
     expect(component.find(Column).first().prop('className')).to.equal('col-md-4 col-sm-6 col-xs-6');
@@ -94,7 +96,8 @@ describe('<Row />', () => {
           layout={layout}
           rowIndex={rowIndex}
           frameComponent={TestCustomFrame}
-          editable />
+          editable
+        />
       </ContainerWithDndContext>
     );
     expect(component.find(Widgets).first().prop('widgets')).to.equal(columns[0].widgets);
