@@ -164,3 +164,7 @@ Dazzle also allows you to customize the `Add Widget` component which appears whe
 
 ## License
 MIT © [Raathigeshan](https://twitter.com/Raathigeshan)
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/2VtFmV65B5vo13VnsCfGqKU8/Raathigesh/dazzle'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/2VtFmV65B5vo13VnsCfGqKU8/Raathigesh/dazzle.svg' />
+</a>
