@@ -53,6 +53,7 @@ describe('<WidgetFrame />', () => {
     expect(component.find(DefaultFrame).first().prop('children')).to.equal(children);
     expect(component.find(DefaultFrame).first().prop('editable')).to.equal(editable);
     expect(component.find(DefaultFrame).first().prop('title')).to.equal(title);
+    expect(component.find('WidgetFrame div').first().prop('style').opacity).to.equal(1);
   });
 
   it('DefaultFrame onRemove should be called when close is clicked', () => {
@@ -131,6 +132,7 @@ describe('<WidgetFrame />', () => {
     let title = 'Widget Title';
     let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     let identity = (el) => el;
+    const isDragging = false;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -141,6 +143,7 @@ describe('<WidgetFrame />', () => {
           frameComponent={TestCustomFrame}
           connectDragSource={identity}
           connectDropTarget={identity}
+          isDragging={isDragging}
         />
       </ContainerWithDndContext>
     );
@@ -148,5 +151,6 @@ describe('<WidgetFrame />', () => {
     expect(component.find(TestCustomFrame).first().prop('children')).to.equal(children);
     expect(component.find(TestCustomFrame).first().prop('editable')).to.equal(editable);
     expect(component.find(TestCustomFrame).first().prop('title')).to.equal(title);
+    expect(component.find(TestCustomFrame).first().prop('isDragging')).to.equal(isDragging);
   });
 });
