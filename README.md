@@ -25,6 +25,8 @@
 </p>
 <br>
 
+**Looking for maintainers https://github.com/Raathigesh/dazzle/issues/41**
+
 Dazzle is a library for building dashboards with React JS. Dazzle does not depend on any front-end libraries but it makes it easier to integrate with them.
 
 Dazzle's goal is to be flexible and simple. Even though there are some UI components readily available out of the box, you have the complete control to override them as you wish with your own styles and layout.
