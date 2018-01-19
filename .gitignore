@@ -36,3 +36,8 @@ node_modules
 .#*
 # dist/lib.js
 # dist/lib.js.map
+
+#VS Code Files
+launch.json
+
+package-lock.json
