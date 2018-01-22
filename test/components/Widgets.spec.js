@@ -1,9 +1,9 @@
-import { expect } from 'chai';
+import { expect, assert } from 'chai';
 import React from 'react';
 import { shallow } from 'enzyme';
 import Widgets from '../../lib/components/Widgets';
 import WidgetFrame from '../../lib/components/WidgetFrame';
-import TestComponent from '../fake/TestComponent';
+import {TestComponent,TestTitleComponent} from '../fake/TestComponent';
 
 describe('<Widgets />', () => {
   it('Should render widgets with widget frames', () => {
@@ -103,8 +103,8 @@ describe('<Widgets />', () => {
         type: TestComponent,
         title: 'Sample Hello World App',
       },
-    }; 
-    
+    };
+
     const layout = {};
     const columnIndex = 5;
     const rowIndex = 6;
@@ -128,6 +128,75 @@ describe('<Widgets />', () => {
     );
 
     expect(component.find(TestComponent).at(0).prop('tryme')).to.equal('tryme');
+  });
+  it('Layout may include title', () => {
+    let title = "custom layout title";
+    const widgets = [{ key: 'HelloWorld', title: title }];
+    const widgetTypes = {
+      HelloWorld: {
+        type: TestComponent,
+        title: 'Sample Hello World App',
+      },
+    };
+
+    const layout = {};
+    const columnIndex = 5;
+    const rowIndex = 6;
+    const widgetIndex = 0;
+    const editable = false;
+    const frame = () => { };
+    const onRemove = () => { };
+
+    const component = shallow(
+      <Widgets
+        widgets={widgets}
+        widgetTypes={widgetTypes}
+        layout={layout}
+        columnIndex={columnIndex}
+        rowIndex={rowIndex}
+        widgetIndex={widgetIndex}
+        editable={editable}
+        frameComponent={frame}
+        onRemove={onRemove}
+      />
+    );
+
+    expect(component.find(WidgetFrame).at(0).prop('title')).to.equal(title);
+  });
+  it('Layout titles may be component intializers', () => {
+    let title = "custom layout title";
+    
+
+    const widgets = [{ key: 'HelloWorld', title: TestTitleComponent }];
+    const widgetTypes = {
+      HelloWorld: {
+        type: TestComponent,
+        title: 'Sample Hello World App',
+      },
+    };
+
+    const layout = {};
+    const columnIndex = 5;
+    const rowIndex = 6;
+    const widgetIndex = 0;
+    const editable = false;
+    const frame = () => { };
+    const onRemove = () => { };
+
+    const component = shallow(
+      <Widgets
+        widgets={widgets}
+        widgetTypes={widgetTypes}
+        layout={layout}
+        columnIndex={columnIndex}
+        rowIndex={rowIndex}
+        widgetIndex={widgetIndex}
+        editable={editable}
+        frameComponent={frame}
+        onRemove={onRemove}
+      />
+    );
+    assert.equal(typeof component.find(WidgetFrame).first().prop('title'),  typeof TestTitleComponent );
   });
   it('Frame should have the actual widget as children', () => {
     const widgets = [{ key: 'HelloWorld' }];
