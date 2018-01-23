@@ -30,7 +30,7 @@ class App extends React.Component {
             widgets: [{ key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{ key: 'RocketWidget', title: (inprops) => <input type="text" value="Custom Layout Title" {...inprops} />  }],
+            widgets: [{ key: 'RocketWidget', title: () => <input type="text" value="Custom Layout Title" /> }],
           }],
         }, {
           columns: [{
