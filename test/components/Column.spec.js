@@ -29,6 +29,6 @@ describe('<Column />', () => {
     let OriginalColumn = Column.DecoratedComponent;
     let identity = (el) => el;
     const component = mount(<OriginalColumn connectDropTarget={identity} className="ColumnClass" />);
-    expect(component.find('.ColumnClass')).to.have.length(1);
+    expect(component.find('.ColumnClass').at(0)).to.have.length(1);
   });
 });
