@@ -36,3 +36,5 @@ node_modules
 .#*
 dist/lib.js
 dist/lib.js.map
+.idea
+storybook-static
