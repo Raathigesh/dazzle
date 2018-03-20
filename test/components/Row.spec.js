@@ -4,7 +4,7 @@ import { mount, shallow } from 'enzyme';
 import Column from '../../lib/components/Column';
 import Row from '../../lib/components/Row';
 import Widgets from '../../lib/components/Widgets';
-import TestComponent from '../fake/TestComponent';
+import { TestComponent } from '../fake/TestComponent';
 import TestCustomFrame from '../fake/TestCustomFrame';
 import ContainerWithDndContext from '../fake/ContainerWithDndContext';
 
@@ -30,8 +30,8 @@ function setup() {
   return {
     columns,
     widgets,
-    onAdd: () => {},
-    onRemove: () => {},
+    onAdd: () => { },
+    onRemove: () => { },
     layout: {},
     rowIndex: 1,
   };

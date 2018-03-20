@@ -6,4 +6,10 @@ const TestComponent = () => {
   );
 };
 
-export default TestComponent;
+const TestTitleComponent = (props) => {
+  return (
+    <div {...{ tryProp: "try" + props.title, ...props }}>try{props.title}</div>
+  );
+};
+
+export { TestComponent, TestTitleComponent };
