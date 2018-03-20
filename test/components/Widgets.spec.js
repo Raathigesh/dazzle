@@ -6,6 +6,14 @@ import WidgetFrame from '../../lib/components/WidgetFrame';
 import TestComponent from '../fake/TestComponent';
 
 describe('<Widgets />', () => {
+  const layout = {};
+  const columnIndex = 5;
+  const rowIndex = 6;
+  const widgetIndex = 0;
+  const editable = false;
+  const frame = () => {};
+  const onRemove = () => {};
+
   it('Should render widgets with widget frames', () => {
     const widgets = [{ key: 'HelloWorld' }];
     const widgetTypes = {
@@ -26,14 +34,6 @@ describe('<Widgets />', () => {
         title: 'Sample Hello World App',
       },
     };
-
-    const layout = {};
-    const columnIndex = 5;
-    const rowIndex = 6;
-    const widgetIndex = 0;
-    const editable = false;
-    const frame = () => {};
-    const onRemove = () => {};
 
     const component = shallow(
       <Widgets
@@ -57,6 +57,37 @@ describe('<Widgets />', () => {
     expect(component.find(WidgetFrame).at(0).prop('editable')).to.equal(editable);
     expect(component.find(WidgetFrame).at(0).prop('frameComponent')).to.equal(frame);
     expect(component.find(WidgetFrame).at(0).prop('onRemove')).to.equal(onRemove);
+  });
+
+  it('Should pass optional `frameSettings` to WidgetFrame', () => {
+    const widgets = [{ key: 'HelloWorld' }];
+    const widgetTypes = {
+      HelloWorld: {
+        type: TestComponent,
+        title: 'Sample Hello World App',
+        frameSettings: {
+          color: '#E140AD',
+        },
+      },
+    };
+
+    const component = shallow(
+      <Widgets
+        widgets={widgets}
+        widgetTypes={widgetTypes}
+        layout={layout}
+        columnIndex={columnIndex}
+        rowIndex={rowIndex}
+        widgetIndex={widgetIndex}
+        editable={editable}
+        frameComponent={frame}
+        onRemove={onRemove}
+      />
+    );
+
+    expect(component.find(WidgetFrame).at(0).prop('frameSettings')).to.deep.equal({
+      color: '#E140AD',
+    });
   });
 
   it('Frame should have the actual widget as children', () => {
