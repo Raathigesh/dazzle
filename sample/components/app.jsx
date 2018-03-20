@@ -10,7 +10,7 @@ import Container from './Container';
 import HelloWorld from './widgets/HelloWorld';
 import AnotherWidget from './widgets/AnotherWidget';
 import AddWidgetDialog from './AddWidgetDialog';
- // import CustomAddWidgetButton from './CustomAddWidgetButton';
+// import CustomAddWidgetButton from './CustomAddWidgetButton';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/custom.css';
@@ -24,13 +24,13 @@ class App extends React.Component {
         rows: [{
           columns: [{
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{ key: 'RocketWidget' }, { key: 'AlienWidget' }, { key: 'RocketWidget' }],
+            widgets: [{ key: 'RocketWidget' }, { key: 'AlienWidget', title: 'Custom Layout Title' }, { key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
             widgets: [{ key: 'RocketWidget' }],
           }, {
             className: 'col-md-4 col-sm-6 col-xs-6',
-            widgets: [{ key: 'RocketWidget' }],
+            widgets: [{ key: 'RocketWidget', title: () => <input type="text" value="Custom Layout Title" /> }],
           }],
         }, {
           columns: [{

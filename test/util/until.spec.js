@@ -28,7 +28,7 @@ describe('Util.addWidget()', () => {
           widgets: [],
         }],
       }],
-    }).to.eql(addWidget(layout, 0, 0, 'NewWidget'));
+    }).to.eql(addWidget(layout, 0, 0, 'NewWidget',undefined,undefined));
   });
 });
 

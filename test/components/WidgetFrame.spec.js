@@ -89,7 +89,7 @@ describe('<WidgetFrame />', () => {
       </ContainerWithDndContext>
     );
     component.find('a').simulate('click');
-
+    
     expect(onRemove.calledWithExactly({
       rows: [{
         columns: [{
@@ -97,7 +97,7 @@ describe('<WidgetFrame />', () => {
           widgets: [],
         }],
       }],
-    })).to.equal(true);
+    }, 0, 0, 0)).to.equal(true);
   });
 
   it('Customized frame should be used if provided', () => {
