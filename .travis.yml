@@ -6,7 +6,7 @@ cache:
 notifications:
   email: false
 node_js:
-  - '4'
+  - '8'
 before_install:
   - npm i -g npm@^5.0.0
   - npm i -g codecov
