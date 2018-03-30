@@ -5,9 +5,9 @@ const EditBar = ({ onEdit }) => (
   <div className="row edit-bar">
     <div className="col-sm-12 text-right">
       <button type="button" className="btn btn-default btn-xs" onClick={onEdit}>
-        <span className="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        <span className="glyphicon glyphicon-pencil" aria-hidden="true" />
           Edit
-        </button>
+      </button>
     </div>
   </div>
 );

@@ -1,6 +1,14 @@
-import { jsdom } from 'jsdom';
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 
-global.document = jsdom('<!doctype html><html><body></body></html>');
+// setup file
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+
+configure({ adapter: new Adapter() });
+
+const { document } = (new JSDOM('')).window;
+global.document = document;
 global.window = document.defaultView;
 global.navigator = global.window.navigator;
 window.localStorage = window.sessionStorage = {
