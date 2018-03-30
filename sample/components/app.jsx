@@ -10,7 +10,7 @@ import Container from './Container';
 import HelloWorld from './widgets/HelloWorld';
 import AnotherWidget from './widgets/AnotherWidget';
 import AddWidgetDialog from './AddWidgetDialog';
- // import CustomAddWidgetButton from './CustomAddWidgetButton';
+// import CustomAddWidgetButton from './CustomAddWidgetButton';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/custom.css';

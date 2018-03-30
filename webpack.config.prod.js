@@ -9,11 +9,11 @@ const basePlugins = [
 ];
 
 const devPlugins = [
-  new webpack.NoErrorsPlugin(),
+  new webpack.NoEmitOnErrorsPlugin(),
 ];
 
 const prodPlugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
 ];
 
 const plugins = basePlugins
@@ -26,7 +26,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
 
   output: {
@@ -48,13 +48,11 @@ module.exports = {
   plugins,
 
   module: {
-    preLoaders: [
-      { test: /\.(js|jsx)$$/, loader: 'source-map-loader' },
-      { test: /\.(js|jsx)$$/, loader: 'eslint-loader' },
-    ],
-    loaders: [
+    rules: [
+      { test: /\.(js|jsx)$$/, enforce: 'pre', loader: 'source-map-loader' },
+      { test: /\.(js|jsx)$$/, enforce: 'pre', loader: 'eslint-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+      { test: /\.(js|jsx)$/, loaders: ['babel-loader'], exclude: /node_modules/ },
     ],
   },
   node: {

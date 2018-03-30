@@ -24,16 +24,11 @@ const basePlugins = [
 ];
 
 const devPlugins = [
-  new webpack.NoErrorsPlugin(),
+  new webpack.NoEmitOnErrorsPlugin(),
 ];
 
 const prodPlugins = [
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.optimize.UglifyJsPlugin({
-    compressor: {
-      warnings: false,
-    },
-  }),
+  new webpack.optimize.OccurrenceOrderPlugin(),
 ];
 
 const plugins = basePlugins
@@ -50,7 +45,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
 
   output: {
@@ -70,32 +65,19 @@ module.exports = {
   },
 
   module: {
-    preLoaders: [
-      { test: /\.(js|jsx)$$/, loader: 'source-map-loader' },
-      { test: /\.(js|jsx)$$/, loader: 'eslint-loader' },
-    ],
-    loaders: [
+    rules: [
+      { test: /\.(js|jsx)$$/, enforce: 'pre', loader: 'source-map-loader' },
+      { test: /\.(js|jsx)$$/, enforce: 'pre', loader: 'eslint-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.(js|jsx)$/, loaders: ['react-hot', 'babel'], exclude: /node_modules/ },
+      { test: /\.(js|jsx)$/, loaders: ['babel-loader'], exclude: /node_modules/ },
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.(png|jpg|jpeg|gif|svg)$/, loader: 'url-loader?prefix=img/&limit=5000' },
-      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
-      { test: /\.(woff)$/, loader: 'url?prefix=font/&limit=5000' },
-      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream' },
-      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml' },
-      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&minetype=application/font-wof' },
-      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&minetype=application/font-woff2' },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader' },
+      { test: /\.(woff)$/, loader: 'url-loader?prefix=font/&limit=5000' },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=application/octet-stream' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&minetype=application/font-wof' },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url-loader?limit=10000&minetype=application/font-woff2' },
     ],
-  },
-
-  postcss: function postcssInit() {
-    return [
-      require('postcss-import')({
-        addDependencyTo: webpack,
-      }),
-      require('postcss-cssnext')({
-        browsers: ['ie >= 8', 'last 2 versions'],
-      }),
-    ];
   },
 };

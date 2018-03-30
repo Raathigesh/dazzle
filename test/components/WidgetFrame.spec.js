@@ -9,12 +9,12 @@ import ContainerWithDndContext from '../fake/ContainerWithDndContext';
 
 describe('<WidgetFrame />', () => {
   it('Default frame should be used when customized frame is not provided', () => {
-    let onAdd = spy();
-    let layout = {};
-    let rowIndex = 1;
-    let columnIndex = 2;
-    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity = (el) => el;
+    const onAdd = spy();
+    const layout = {};
+    const rowIndex = 1;
+    const columnIndex = 2;
+    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    const identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -32,12 +32,12 @@ describe('<WidgetFrame />', () => {
   });
 
   it('DefaultFrame should be provided with necessary props', () => {
-    let children = [];
-    let editable = false;
-    let onRemove = () => {};
-    let title = 'Widget Title';
-    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity = (el) => el;
+    const children = [];
+    const editable = false;
+    const onRemove = () => {};
+    const title = 'Widget Title';
+    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    const identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -56,10 +56,10 @@ describe('<WidgetFrame />', () => {
   });
 
   it('DefaultFrame onRemove should be called when close is clicked', () => {
-    let children = [];
-    let editable = false;
-    let onRemove = spy();
-    let title = 'Widget Title';
+    const children = [];
+    const editable = false;
+    const onRemove = spy();
+    const title = 'Widget Title';
     const layout = {
       rows: [{
         columns: [{
@@ -69,8 +69,8 @@ describe('<WidgetFrame />', () => {
       }],
     };
 
-    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity = (el) => el;
+    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    const identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -101,12 +101,12 @@ describe('<WidgetFrame />', () => {
   });
 
   it('Customized frame should be used if provided', () => {
-    let onAdd = spy();
-    let layout = {};
-    let rowIndex = 1;
-    let columnIndex = 2;
-    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity = (el) => el;
+    const onAdd = spy();
+    const layout = {};
+    const rowIndex = 1;
+    const columnIndex = 2;
+    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    const identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -119,18 +119,18 @@ describe('<WidgetFrame />', () => {
           connectDragSource={identity}
           connectDropTarget={identity}
         />
-    </ContainerWithDndContext>
+      </ContainerWithDndContext>
     );
     expect(component.find(TestCustomFrame)).to.have.length(1);
   });
 
   it('Customized frame should be provided with necessary props', () => {
-    let children = [];
-    let editable = false;
-    let onRemove = () => {};
-    let title = 'Widget Title';
-    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity = (el) => el;
+    const children = [];
+    const editable = false;
+    const onRemove = () => {};
+    const title = 'Widget Title';
+    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    const identity = (el) => el;
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
