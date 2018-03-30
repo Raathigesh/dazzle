@@ -125,12 +125,15 @@ describe('<WidgetFrame />', () => {
   });
 
   it('Customized frame should be provided with necessary props', () => {
-    const children = [];
-    const editable = false;
-    const onRemove = () => {};
-    const title = 'Widget Title';
-    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    const identity = (el) => el;
+    let children = [];
+    let editable = false;
+    let onRemove = () => {};
+    let title = 'Widget Title';
+    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    let identity = (el) => el;
+    let settings = {
+      color: '#E140AD',
+    };
     const component = mount(
       <ContainerWithDndContext>
         <OriginalWidgetFrame
@@ -139,6 +142,7 @@ describe('<WidgetFrame />', () => {
           onRemove={onRemove}
           title={title}
           frameComponent={TestCustomFrame}
+          frameSettings={settings}
           connectDragSource={identity}
           connectDropTarget={identity}
         />
@@ -148,5 +152,6 @@ describe('<WidgetFrame />', () => {
     expect(component.find(TestCustomFrame).first().prop('children')).to.equal(children);
     expect(component.find(TestCustomFrame).first().prop('editable')).to.equal(editable);
     expect(component.find(TestCustomFrame).first().prop('title')).to.equal(title);
+    expect(component.find(TestCustomFrame).first().prop('settings')).to.equal(settings);
   });
 });
