@@ -125,13 +125,13 @@ describe('<WidgetFrame />', () => {
   });
 
   it('Customized frame should be provided with necessary props', () => {
-    let children = [];
-    let editable = false;
-    let onRemove = () => {};
-    let title = 'Widget Title';
-    let OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
-    let identity = (el) => el;
-    let settings = {
+    const children = [];
+    const editable = false;
+    const onRemove = () => {};
+    const title = 'Widget Title';
+    const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
+    const identity = (el) => el;
+    const settings = {
       color: '#E140AD',
     };
     const component = mount(
