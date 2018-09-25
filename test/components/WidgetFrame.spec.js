@@ -88,7 +88,7 @@ describe('<WidgetFrame />', () => {
         />
       </ContainerWithDndContext>
     );
-    component.find('a').simulate('click');
+    component.find('a.remove').simulate('click');
 
     expect(onRemove.calledWithExactly({
       rows: [{
