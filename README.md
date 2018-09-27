@@ -1,4 +1,4 @@
-<h1 align="center">
+﻿<h1 align="center">
   <img src="https://raw.githubusercontent.com/Raathigesh/Dazzle/master/docs/Dazzle.png" alt="Dazzle">
    <br>
   React Dazzle
@@ -62,6 +62,7 @@ import 'react-dazzle/lib/style/style.css';
 
 class App extends Component {
   constructor() {
+    super();
     this.state = {      
       widgets: {
         WordCounter: {
@@ -84,6 +85,8 @@ class App extends Component {
     return <Dashboard  widgets={this.state.widgets} layout={this.state.layout}  />
   }
 }
+
+export default App;
 ```
 
 Dazzle uses [react-dnd](https://github.com/react-dnd/react-dnd). The default _Dashboard_ component of Dazzle is wrapped by [_DragDropContext_](https://react-dnd.github.io/react-dnd/docs-drag-drop-context.html) of react-dnd.
