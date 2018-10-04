@@ -15,12 +15,12 @@
     <img src="https://img.shields.io/npm/v/react-dazzle.svg?style=flat-square"
          alt="NPM Version">
   </a>
-  <a href="https://travis-ci.org/Raathigesh/Dazzle">
+  <a href="https://travis-ci.org/Raathigesh/dazzle">
     <img src="https://img.shields.io/travis/Raathigesh/dazzle.svg?style=flat-square"
          alt="Travis Build">
   </a>
-  <a href="https://codecov.io/github/Raathigesh/Dazzle?branch=master">
-    <img src="https://img.shields.io/codecov/c/github/Raathigesh/Dazzle.svg?style=flat-square" alt="Coverage via Codecov" />
+  <a href="https://codecov.io/github/Raathigesh/dazzle?branch=master">
+    <img src="https://img.shields.io/codecov/c/github/Raathigesh/dazzle.svg?style=flat-square" alt="Coverage via Codecov" />
   </a>
 </p>
 <br>
