@@ -69,15 +69,6 @@ describe('<WidgetFrame />', () => {
       }],
     };
 
-    const newLayout = {
-      rows: [{
-        columns: [{
-          className: 'col-md-4',
-          widgets: [],
-        }],
-      }],
-    };
-
     const OriginalWidgetFrame = WidgetFrame.DecoratedComponent;
     const identity = (el) => el;
     const component = mount(
@@ -98,9 +89,14 @@ describe('<WidgetFrame />', () => {
       </ContainerWithDndContext>
     );
     component.find('a.remove').simulate('click');
-    console.log(JSON.stringify(newLayout));
-    console.log(JSON.stringify(onRemove.lastCall.args[0]));
-    expect(onRemove.calledWithExactly(newLayout)).to.equal(true);
+    expect(onRemove.calledWithExactly({
+      rows: [{
+        columns: [{
+          className: 'col-md-4',
+          widgets: [],
+        }],
+      }],
+    }, 0, 0, 0)).to.equal(true);
   });
 
   it('Customized frame should be used if provided', () => {
