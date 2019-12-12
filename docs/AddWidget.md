@@ -43,7 +43,7 @@ class App extends Component {
       <Dashboard
         widgets={this.state.widgets}
         layout={this.state.layout}
-        onAdd={this.onAdd}        
+        onAdd={this.onAdd}  />      
     );
   }
 }
